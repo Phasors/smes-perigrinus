@@ -1,0 +1,195 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body{
+   font-family: 'Poppins', sans-serif;
+   background-color: #dfdfdf;
+   overflow-x: hidden;
+}
+
+
+.center span{
+    display:block;
+}
+
+.welcome{
+	margin-top: 35px;
+    margin-left: 25px;
+    color: #007a81;
+    font-size: 50px;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    background-color: #dfdfdf;
+    position:relative;
+    animation: text 2s 1;
+}
+.logo{
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+}
+.stud-name{
+    margin-left: 25px;
+    font-size: 25px;
+    color: #007a81;
+}
+
+.wrapper {
+    display: flex;
+    flex:auto;
+    width: 100%;
+    align-items: stretch;
+}
+
+#content{
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;      
+}
+
+#content-body{
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;      
+}
+
+@keyframes text{
+    0%{
+        color: black; 
+        margin-bottom: -40px;
+    }
+    40%{
+        /*letter-spacing: 25px;*/
+        margin-bottom: -40px;
+    }
+    85%{
+        /*letter-spacing: 8px;*/
+        margin-bottom: -40px;
+    }
+}
+
+
+.navbar-cst{
+	background-color: #007a81 !important;
+}
+
+.btn-info{
+    background-color: #007a81 !important;
+    border:none;
+}
+
+.btn-info:hover{
+    background-color: #fff !important;
+    color:#007a81;
+    transition: 0.4s;
+}
+
+
+
+
+
+
+
+
+
+
+/*-------- PILLS FOR MY PROFILE ---------*/
+.nav-tabs-cst{
+    color: #007a81;
+    margin-right: 10px;
+}
+.nav-tabs-cst:hover{
+    border: 1px solid #007a81;
+    color: #007a81;
+}
+
+.nav-tabs-cst.active, .navtabs--cst:active, .navtabs--cst:hover{
+    border: 1px solid #007a81;
+    background-color: #007a81 !important;/* #7386D5*/
+    color: white !important;
+}
+
+
+/*---------------IMAGE UPLOAD-------------- */
+.label-form9{
+    margin-top: 10px;
+    background-color:#007a81; 
+    color: white !important;
+    padding: 10px;
+    border-radius: 5px;
+}
+.label-form9:hover{
+    cursor:pointer;
+    background-color:#06494d;
+    transition: 0.3s;
+}
+
+
+#form9{
+    display: none;
+}
+/*--------------------------------------- */
+
+
+.card-header{
+    background-color:#0a474b;
+    color: #fff;
+}
+
+.card-body{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+label{
+    font-weight: bold;
+}
+th{
+    background-color: #007a81;
+    color: white;
+}
+
+
+/*FOR ICON- INDEX MEDIA*/
+@media (max-width: 500px) {
+    .margin{
+        margin-left: 30px;
+        margin-bottom: 100px;
+    }
+    .welcome{
+        margin-top: 35px;
+        margin-left: 25px;
+        color: #007a81;
+        font-size: 30px;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        background-color: #dfdfdf;
+        position:relative;
+        animation: text 2s 1;
+    }
+    .prof-name{
+        margin-left: 25px;
+        font-size: 15px;
+        color: #007a81;
+    }
+
+}
+
+/*-----------ANNOUNCEMENT------------*/
+.announce-title{
+    color: #007a81;
+}
+
+.alert{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*----------- LIBRARY ------------*/
+.nav-pills-cst > li {
+    float:none;
+    display:inline-block;
+    /*zoom:1;*/
+}
+
+.nav-pills-cst {
+    text-align:center;
+}
