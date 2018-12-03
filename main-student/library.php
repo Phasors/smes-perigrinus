@@ -55,4 +55,5 @@
 	</div> <!-- content --> 
 </div> <!-- wrapper -->
 
+<?php include 'footer.php'; ?>
 

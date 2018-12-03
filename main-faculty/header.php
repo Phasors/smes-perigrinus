@@ -16,7 +16,7 @@
 
 
     
-    <link rel="stylesheet" href="../../elec4/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="main.css">

@@ -41,6 +41,7 @@ body{
 
 #content{
     width: 100%;
+    margin-top: 30px;
     min-height: 100vh;
     transition: all 0.3s;      
 }
@@ -82,11 +83,6 @@ body{
     color:#007a81;
     transition: 0.4s;
 }
-
-
-
-
-
 
 
 
@@ -192,4 +188,14 @@ th{
 
 .nav-pills-cst {
     text-align:center;
+}
+
+
+.form-control:focus{
+    box-shadow:0 0 0 .1rem #00570a!important;
+    border-color: #00570a !important;
+}
+.form-control:active{
+    box-shadow:0 0 0 .2rem #00570a!important;
+    border-color: #00570a !important;
 }
