@@ -42,11 +42,14 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-2 col offset-md-4">
+			<div class="col-sm-2 col offset-md-3">
 				<a href="announcement.php"><img src="img/announcement-icon.png" class="icon block"></a>
 			</div>
 			<div class="col-sm-2 col">
 				<a href="#sched"><img src="img/registration-icon.png" class="icon block"></a>
+			</div>
+			<div class="col-sm-2 col">
+				<a href="request.php"><img src="img/request-icon.png" class="icon block"></a>
 			</div>
 		</div>
 	</div>

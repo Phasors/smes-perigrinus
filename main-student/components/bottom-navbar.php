@@ -12,6 +12,7 @@
                 <a href="myprofile.php"><img src="img/profile-icon.png" class="icon-navbar-btm block-navbar-btm"></a>
                 <a href="library.php"><img src="img/library-icon.png" class="icon-navbar-btm block-navbar-btm"></a>
                 <a href="registrar.php"><img src="img/registration-icon.png" class="icon-navbar-btm block-navbar-btm"></a>
+                <a href="request.php"><img src="img/request-icon.png" class="icon-navbar-btm block-navbar-btm"></a>
             </ul>
         </div>
        <!--  <ul class="nav navbar-nav ml-auto">

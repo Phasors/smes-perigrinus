@@ -18,5 +18,11 @@
 		<li>
 			<a href="library.php">LIBRARY</a>
 		</li>
+		<li>
+			<a href="#registration">REGISTRATION</a>
+		</li>
+		<li>
+			<a href="request.php">REQUEST</a>
+		</li>
 	</ul>
 </nav>

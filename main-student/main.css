@@ -145,6 +145,7 @@ th{
 }
 
 
+
 /*FOR ICON- INDEX MEDIA*/
 @media (max-width: 500px) {
     .margin{
@@ -198,4 +199,8 @@ th{
 .form-control:active{
     box-shadow:0 0 0 .2rem #00570a!important;
     border-color: #00570a !important;
+}
+
+.radio-inline{
+    margin-right: 20px !important;
 }
