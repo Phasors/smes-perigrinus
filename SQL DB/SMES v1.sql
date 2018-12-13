@@ -38,7 +38,7 @@ stdnt_no 				varchar(255), /* year admitted – student number – status [0-nor
 acad_back_info_id		int, /* foreign key from acad_back_info table */
 year_level				int, /* current year level of student */
 block 					int, /* assigned block/section */
-course_id				int, /* foreign key from course table */
+program_id				int, /* foreign key from program table */
 stdnt_status			int, /* inactive=0, active=1 */
 allowed_units			int, /* units allowed for this student during this time */	
 indeficiency			int,	 /* 0-can enroll 1-cannot enroll */
@@ -91,7 +91,7 @@ grades_id 		int  PRIMARY KEY auto_increment,
 prlm_grade		decimal(10,2), /*prelim grade*/
 mdtrm_grade		decimal(10,2), /*midterm grade*/
 fnl_grade		decimal(10,2), /*final grade*/
-subject_id	 	int, /*foreign key from subject table*/
+course_id	 	int, /*foreign key from course table*/
 faculty_id		int,  /*foreign key from faculty table*/
 ay				varchar(255), /*academic year, eg. 18-19 */ 
 semester		varchar(255), /*academic semeter, eg. 1st 2nd Summer*/
@@ -103,21 +103,21 @@ schedule_id		int /*foreign key from schedule table*/
 
 
 
-/*Subject list table*/
-CREATE TABLE subjects
+/*Subject/Course list table*/
+CREATE TABLE courses
 (
 
-subject_id 				int  PRIMARY KEY auto_increment,
-subject_code 			varchar(255), /*subject code*/
-course_id 				int, /*foreign key from course table*/
+course_id 				int  PRIMARY KEY auto_increment,
+course_code 			varchar(255), /*subject/coourse code*/
+program_id 				int, /*foreign key from course table*/
 lab_unit 				int(5), /* unit of laboratory*/ 
 lec_unit 				int(5), /*unit of lecture */
 total_unit				int(5), /*total units of subject*/
 year 					int(5), /*year of subject availability eg. 1st year 1 2nd year 2 */ 
 semester 				varchar(255), /*semester of subject availability eg. 1st , 2nd , Summer */
 curriculum_id			int, /*foreign key from curriculum table*/
-prerequisite_subjects 	varchar(225), /*subject code of pre-requisite*/
-corequisite_subjects 	varchar(225) /*subject code of co-requisite*/
+prerequisite_courses 	varchar(225), /*course code of pre-requisite*/
+corequisite_courses 	varchar(225) /*course code of co-requisite*/
 
 );
 
@@ -127,7 +127,7 @@ corequisite_subjects 	varchar(225) /*subject code of co-requisite*/
 CREATE TABLE schedules
 (
 
-subject_id		int, /*foreign key from subject table*/
+course_id		int, /*foreign key from course table*/
 faculty_id 		int, /*foreign key from faculty table*/
 ay				varchar(9), /*academic year eg. 2018-2019*/
 semester 		varchar(10), /*semester enrolled, 1st 2nd or Summer*/
@@ -148,7 +148,7 @@ CREATE TABLE block
 
 section 		int, /*section of class*/
 year 			int, /*year of class*/
-course_id 		int, /*foreign key from course table*/
+program_id 		int, /*foreign key from program table*/
 block_id   		int  PRIMARY KEY auto_increment, 
 ay 				varchar(9), /*academic year of class*/
 block_info_id	int /*foreign key from block info table*/
@@ -224,12 +224,12 @@ year_added		int /*year added*/
 
 
 
-/*courses table*/
-CREATE TABLE course
+/*programs table*/
+CREATE TABLE program
 (
 
-course_id 		int  PRIMARY KEY auto_increment,
-program			varchar(225), /*name of course*/
+program_id 		int  PRIMARY KEY auto_increment,
+program_name	varchar(225), /*name of course/program*/
 college			int, /*foreign key from college table*/
 year_added		int, /*year added*/
 creator			varchar(225) /*name of adder*/ 
@@ -369,12 +369,12 @@ CREATE TABLE cashiering_module
 transact_no 			int auto_increment PRIMARY KEY,
 person_id				int, /*foreign key from person table*/
 curriculum_id			int, /*foreign key from curriculum table*/
-course_id 				int, /*foreign key from course table*/
+program_id 				int, /*foreign key from program table*/
 semester				int, /* the semester paid*/
 official_receipt_no		int, /*transaction tracking number*/
 official_receipt_date	date, /*transaction timestamp */
 amount_paid				int,	/* total amount paid */
-subjects_paid_for		varchar(255)	/* subjects in the current sem paid */
+courses_paid_for		varchar(255)	/* subjects/courses in the current sem paid */
 
 );
 
@@ -419,4 +419,34 @@ discounted_amount		decimal(10,2)				/*amount discounted from the total amount of
 
 
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
