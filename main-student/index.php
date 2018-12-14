@@ -13,9 +13,6 @@
 		<div class="col-sm-8">
 			<div class="center">
 				<span class="welcome">PERIGRINUS SCHOOL</span>
-				<!-- <span class="prof-name">
-					WELCOME, Name of Student
-				</span> -->
 				<span class="stud-name">Welcome, Name of Student</span>
 
 			</div>

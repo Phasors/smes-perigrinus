@@ -1,0 +1,35 @@
+
+
+th{
+    background-color: #007a81;
+    color: white;
+}
+
+legend{
+  color:#007a81;
+}
+
+/*-------------IMAGE UPLOAD-----------*/
+
+.label-form9{
+    margin-top: 10px;
+    background-color:#007a81; 
+    color: white !important;
+    padding: 10px;
+    border-radius: 5px;
+}
+.label-form9:hover{
+    cursor:pointer;
+    background-color:#06494d;
+    transition: 0.3s;
+}
+
+.label-form9 span{
+  font-weight: bold;
+}
+
+#form9{
+    display: none;
+}
+
+/*-------------------*/

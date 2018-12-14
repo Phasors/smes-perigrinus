@@ -1,0 +1,53 @@
+
+
+.header_invisible{
+  background-color: #000000c7 !important;
+
+}
+
+.header_visible{
+  background-color: black !important;
+}
+
+#logo{
+  height: 50px;
+}
+
+.header_visible #logo{
+  height: 50px;
+  box-sizing: content-box;
+  padding-left: 10px;
+  padding-right: 15px;
+  border-right: solid #E0E0E0 0.1px;
+}
+
+.header_invisible #logo{
+  height: 70px;
+  box-sizing: content-box;
+  padding-left: 10px;
+  padding-right: 15px;
+}
+
+#logo{
+  -webkit-transition-duration: 0.5s;
+  transition: 0.5s;
+}
+
+
+.menu:hover
+{
+  background-color: #00570AC7;
+  display: table-cell;
+  cursor: pointer;
+}
+
+.nav-link{
+  color:white !important;
+}
+
+
+@media (max-width: 500px){
+  .navbar-toggler{
+    background-color: white;
+  }
+}
