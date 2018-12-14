@@ -13,9 +13,20 @@
 }
 
 .logo{
-	width: 200px;
-	height: 200px;
+	width: 100px;
+	height: 100px;
 }
+
+.logo-scroll{
+    width: 80px;
+    height: 80px;
+}
+
+#index-navbar-logo, #title-logo{
+  -webkit-transition-duration: 0.5s;
+  transition: 0.5s;
+}
+
 .welcome{
 	margin-top: 35px;
     margin-left: 25px;
@@ -27,6 +38,20 @@
     position: relative;
     animation: text 2s 1;
 }
+
+.welcome_1{
+    margin-top: 35px;
+    margin-left: 25px;
+    color: #007a81;
+    font-size: 30px;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    position: relative;
+    animation: text 2s 1;
+}
+
+
 
 
 .carousel-item img{

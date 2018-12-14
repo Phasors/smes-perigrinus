@@ -76,6 +76,6 @@
 		</div>
 
 		<?php include 'footer.php'; ?>
-
+		<script src="components/design.js"></script>
 	</body>
 	</html>

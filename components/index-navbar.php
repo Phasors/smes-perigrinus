@@ -1,8 +1,8 @@
 <!--Navigation Bar-->
-	<nav class="navbar navbar-expand-md navbar-light bd-light sticky-top"> 
+	<nav class="navbar navbar-expand-md navbar-light bd-light sticky-top" id="index-navbar"> 
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#"><img src="img/logo-site.png" class="logo"></a>
-			<div class="welcome">PERIGRINUS SCHOOL</div>			
+			<a class="navbar-brand" href="#"><img src="img/logo-site.png" class="sample" id="index-navbar-logo"></a>
+			<div  id="title-logo">PERIGRINUS SCHOOL</div>			
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 				<span class="navbar-toggler-icon"></span>
 			</button>
