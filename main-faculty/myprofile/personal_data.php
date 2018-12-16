@@ -54,10 +54,6 @@
                     <label for="birthplace">Place of Birth</label>
                     <input type="text" name="birthplace" id="birthplace" class="form-control">
                 </div>
-                <div class="form-group col-sm-1">
-                    <label for="age">Age</label>
-                    <input type="text" name="age" id="age" class="form-control" disabled/>
-                </div>
                 <div class="form-group col-sm-3">
                     <label for="religion">Religion</label>
                     <input type="text" name="religion" id="religion" class="form-control">

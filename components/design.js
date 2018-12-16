@@ -23,7 +23,7 @@ $(document).ready(function(){
 });
 
 $(window).scroll(function(){
-  if($(document).scrollTop() > 80){
+  if($(document).scrollTop() > 5){
     $('#index-navbar-logo').removeClass('logo-scroll');
     $('#index-navbar-logo').removeClass('logo');
     $('#index-navbar-logo').addClass('logo-scroll');
@@ -41,7 +41,7 @@ $(document).ready(function(){
 });
 
 $(window).scroll(function(){
-  if($(document).scrollTop() > 80){
+  if($(document).scrollTop() > 5){
     $('#title-logo').removeClass('welcome_1');
     $('#title-logo').removeClass('welcome');
     $('#title-logo').addClass('welcome_1');

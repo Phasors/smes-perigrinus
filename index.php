@@ -57,7 +57,7 @@
 					<p class="lead"> Perigrinus School Services include primary to college level teaching, career, individual and academic counseling, course selection, 4-5 year planning, scheduling, financial aid guidance and grade reporting services.</p>				
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-					<a href="#"><button type="button" class="btn btn-outline-secondary btn-lg"> See Services </button></a>
+					<a href="services/service.php"><button type="button" class="btn btn-outline-secondary btn-lg"> See Services </button></a>
 				</div>
 			</div>
 		</div>
@@ -66,11 +66,34 @@
 		<div class="container-fluid padding">
 			<div class="row welcome text-center">
 				<div class="col-12">
-					<h1 class="display-4"> Building success together. </h1>				
-				</div>
-				<hr>
+					<h1 class="display-3" style="font-size: 60px"> Building success together. </h1>									
+				</div>	
 				<div class="col-12">
-					<p class="lead" style="font-family:Times new roman"> We welcome you to Perigrinus School where we all work together to develop and enhance in our students the capacity to become independent life-long learners and to equip them with the knowlegde, skills and excellence to achieve their goals in life.</p>
+					<hr class="style">
+				</div>	
+				<div class="col-12">
+					<p class="lead" style="font-size: 20px; font-family:arial;letter-spacing: 2px"> We welcome you to Perigrinus School where we all work together to develop and enhance in our students the capacity to become independent life-long learners and to equip them with the knowlegde, skills and excellence to achieve their goals in life.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- School Model-->
+		<div class="container-fluid padding">
+			<div class="row text-center padding">
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<img class="d-center w-45" src="img/about/book1.jpg">
+					<h3 class="head3"> Knowledge </h3>
+					<p3 class="trial"> Knowledge is an understanding of an information about a subject that you get in Perigrinus by learning or personal experience. </p3>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<img class="d-center w-45" src="img/about/medal.jpeg">
+					<h3 class="head3"> Skills </h3>
+					<p3 class="trial"> It takes teamwork in the community to develop better skills for better lives. </p3>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<img class="d-center w-45" src="img/about/trophy.jpg">
+					<h3 class="head3"> Excellence </h3>
+					<p3 class="trial"> Achieving excellence is never easy to do, Perigrinus' helps in building and achieving your excellence. </p3>
 				</div>
 			</div>
 		</div>

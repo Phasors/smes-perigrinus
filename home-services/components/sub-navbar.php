@@ -13,16 +13,16 @@
             <a class="nav-link" href="../index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../home-student-iapply/admission.php">Students</a>
+            <a class="nav-link" href="../student-iapply/admission.php">Students</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Faculty</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../home-services/service.php">Services</a>
+            <a class="nav-link" href="#">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../home-about/about.php">About</a>
+            <a class="nav-link" href="../about/about.php">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" data-toggle="modal" data-target="#contact">Contact Us</a>

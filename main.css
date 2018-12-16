@@ -13,8 +13,8 @@
 }
 
 .logo{
-	width: 100px;
-	height: 100px;
+    width: 100px;
+    height: 100px;
 }
 
 .logo-scroll{
@@ -28,7 +28,7 @@
 }
 
 .welcome{
-	margin-top: 35px;
+    margin-top: 35px;
     margin-left: 25px;
     color: #007a81;
     font-size: 50px;
@@ -55,63 +55,63 @@
 
 
 .carousel-item img{
-	width: 100%;
+    width: 100%;
 }
 
 [class*="col-"] {
-	padding: 1rem;
+    padding: 1rem;
 }
 
 .navbar{
-	background-color: white;
+    background-color: white;
 }
 
 
 li a:hover{
-	color: #007a81 !important;
+    color: #007a81 !important;
 }
 
 @media (max-width: 400px) {
     .welcome{
-    	font-size: 10px !important;
-    	margin-left: 0px;
+        font-size: 10px !important;
+        margin-left: 0px;
     }
     .navbar-toggler{
-    	font-size: 10px;
+        font-size: 10px;
     }
     .logo{
-    	width: 30px !important;
-    	height: 30px !important;
+        width: 30px !important;
+        height: 30px !important;
     }
 
 }
 
 @media (max-width: 800px) {
     .welcome{
-    	font-size: 20px ;
+        font-size: 20px ;
     }
     .logo{
-    	width: 100px;
-    	height: 100px;
+        width: 100px;
+        height: 100px;
     }
 
 }
 
 @media (max-width: 1300px) {
     .welcome{
-    	font-size: 20px ;
+        font-size: 20px ;
     }
     .logo{
-    	width: 100px;
-    	height: 100px;
+        width: 100px;
+        height: 100px;
     }
 
 }
 
 
 footer{
-	background-color: #0a474b;
-	color:white;
+    background-color: #0a474b;
+    color:white;
 }
 
 footer li a{
@@ -125,14 +125,14 @@ footer li a:hover{
 
 
 i{
-	font-size: 30px !important;
-	margin-right: 10px;
-	color:white;
+    font-size: 30px !important;
+    margin-right: 10px;
+    color:white;
 }
 
 i:hover{
-	cursor: pointer;
-	transition: 0.4s; 
+    cursor: pointer;
+    transition: 0.4s; 
     animation: second .2s linear;
     animation-fill-mode: forwards;
 }
@@ -147,14 +147,69 @@ i:hover{
 }
 
 .modal-title{
-	color: #007a81;
-	margin-top: 15px;
-	margin-left: 30px;
+    color: #007a81;
+    margin-top: 15px;
+    margin-left: 30px;
 }
 .modal-body{
-	background-color: #007a81;
+    background-color: #007a81;
 }
 
 .btn-outline-light:hover{
-	color: #007a81;
+    color: #007a81;
+}
+
+hr.style {
+    height: 30px;
+    border-style: solid;
+    border-color: #0a474b;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+hr.style:before{
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: #0a474b;
+    border-width: 0 0 1px 0;
+    border-radius: 20px; 
+}
+
+h3.head3{
+    color:#0a474b;
+    font-weight: bold; 
+    font-size: 45px;
+}
+
+p3.trial{
+    color:#004242; 
+    font-size: 15px;
+}
+
+p4.para{
+    color:#004242; 
+    font-size: 20px;
+    text-align: justify;
+}
+
+h5.service1{
+    font-size: 35px; 
+    color:#6497b1; 
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+p5.service2{
+    font-size: 25px;
+    color:#03396c; 
+    letter-spacing: 2px;
+}
+
+p6.service3{
+    font-size: 25px;
+    color:#005b96; 
+    letter-spacing: 2px;
 }
