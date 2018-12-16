@@ -1,10 +1,4 @@
-
-
-
-
 CREATE DATABASE SMES;
-
-
 
 
 /* person info table */
@@ -20,10 +14,6 @@ birthdate		date,		/* birth day */
 contact_no		varchar(255),	/* contact # */
 civil_status	varchar(15), /*SINGLE,TAKEN*/
 email			varchar(225), /*user email address*/
-
-
-
-
 sex				varchar(20), /*eg. MALE FEMALE */ 
 res_house_no 	int, /*residential house/building number*/
 res_strt_name 	varchar(255), /*residential street name*/
@@ -40,7 +30,6 @@ perm_region		varchar(10) /*permanent region*/
 );
 
 
-
 /* student info/record table*/
 CREATE TABLE stdnt_info
 (
@@ -48,6 +37,7 @@ CREATE TABLE stdnt_info
 stdnt_info_id			int  PRIMARY KEY AUTO_INCREMENT,
 curriculum_id			int, /*foreign key from curriculum table*/
 person_id				int, /* foreign key from person table */
+student_level			int, /*0-jhs 1-shs 2-college*/
 prnt_grdn_info_id		int, /* foreign key from prnt_grdn_info table */
 academics_docu_id		int,	/* foreign key from academics_docu table*/	
 acad_back_info_id		int, /* foreign key from acad_back_info table */
@@ -62,7 +52,6 @@ indeficiency			int,	 /* 0-can enroll 1-cannot enroll */
 stdnt_standing			int, /*0-regular, 1-irregular*/
 stdnt_type				int /*0-regular, 1-shiftee, 2-transferee, 3-cross enrollee*/
 );
-
 
 
 /* Parent/Guardian info table */
@@ -80,7 +69,6 @@ address					varchar(225), /*full address of guardian/parent */
 status					int  /* 0- active 1-inactive */
 
 );
-
 
 
 /* Student Academic Background Record Table */
@@ -104,7 +92,6 @@ trtry_school_sy 		date	/*if shiftee, previous college last school year*/
 );
 
 
-
 /*grades table of students*/
 CREATE TABLE grades
 (
@@ -123,7 +110,6 @@ semester		varchar(255), /*academic semeter, eg. 1st 2nd Summer*/
 status 			char(3) /* eg. P,F,W,INC,D*/
 
 );
-
 
 
 /*Subject/Course list table*/
@@ -180,8 +166,6 @@ paid				int /* paid status, 0-unpaid, 1- paid*/
 );
 
 
-
-
 /*student blocks*/
 CREATE TABLE block
 (
@@ -195,6 +179,7 @@ ay 				varchar(9) /*academic year of class*/
 
 );
 
+
 /*student blocks info table*/
 CREATE TABLE block_info
 (
@@ -202,6 +187,60 @@ CREATE TABLE block_info
 block_info_id   int  PRIMARY KEY auto_increment, 
 stdnt_info_id 	int, /*foreign key from student_info table*/
 block_id		int /*foreign key from block table*/
+
+);
+
+
+/*colleges table*/
+CREATE TABLE colleges
+(
+
+college_id int PRIMARY KEY auto_increment,
+college_name varchar(255), /*college of lol*/
+date_added date /*date added*/
+
+);
+
+
+/*departments table*/
+CREATE TABLE dept
+(
+
+dept_id int PRIMARY KEY auto_increment,
+college_id int, /*foreign key from college table*/ 
+dept_name varchar(255) /*Computer Engineering Department*/
+
+);
+
+
+/*faculty load table*/
+CREATE TABLE faculty_load
+(
+
+faculty_load_id int PRIMARY KEY auto_increment, 
+faculty_id 		int, /*foreign key from faculty table*/
+total_unit_load int, /*unit load given for this time*/
+unit_load_taken int, /*taken units from total load for this time*/
+unit_load_avail int, /*available units from total load for this time*/
+year			int, /*eg. 2018,2019,2020*/
+semester 		varchar(10), /*1st, 2nd, Summer*/ 
+load_encoder 	varchar(255), /*name of the person who gave this load*/
+approved		int /*0-unapporived, 1-approved dean*/
+
+);
+
+
+/*table that enlists faculty registered courses */
+CREATE TABLE faculty_courses
+(
+
+faculty_course int primary key auto_increment,
+faculty_id     int, /*foreign key from faculty table*/
+faculty_load_id int,/*foreign key from faculty_load table*/
+course_schedule_id int, /*foreign key from course_schedules table*/
+ay				varchar(20), /*eg. '2018-2019'*/
+sem				varchar(10), /*eg '1st''2nd''SUMMER'*/
+total_units		int /*total unit of the course*/
 
 );
 
@@ -220,39 +259,9 @@ age 			int, /*age of faculty*/
 position		varchar(50), /*chairperson,labhead,professor,dean*/
 type			int, /*0-regular 1-part time*/
 status 			int		/* if 0-ACTIVE, 1-IN-ACTIVE, 2-RETIRED, 3-Fired, 4-Leave*/
-);
-
-/*colleges table*/
-CREATE TABLE colleges
-(
-college_id int PRIMARY KEY auto_increment,
-college_name varchar(255), /*college of lol*/
-date_added date /*date added*/
-);
-
-/*departments table*/
-CREATE TABLE dept
-(
-dept_id int PRIMARY KEY auto_increment,
-college_id int, /*foreign key from college table*/ 
-dept_name varchar(255) /*Computer Engineering Department*/
-);
-
-/*faculty load table*/
-CREATE TABLE faculty_load
-(
-
-faculty_load_id int PRIMARY KEY auto_increment, 
-faculty_id 		int, /*foreign key from faculty table*/
-total_unit_load int, /*unit load given for this time*/
-unit_load_taken int, /*taken units from total load for this time*/
-unit_load_avail int, /*available units from total load for this time*/
-year			int, /*eg. 2018,2019,2020*/
-semester 		varchar(10), /*1st, 2nd, Summer*/ 
-load_encoder 	varchar(255), /*name of the person who gave this load*/
-approved		int /*0-unapporived, 1-approved dean*/
 
 );
+
 
 /*curriculum table*/
 CREATE TABLE curriculum
@@ -262,8 +271,8 @@ curriculum_id	int  PRIMARY KEY auto_increment,
 program_id  	int, /*foreign key from program table*/
 year_added		int, /*year added*/
 active			int  /*0 inactive, 1 active*/
-);
 
+);
 
 
 /*programs table*/
@@ -277,8 +286,8 @@ year_added		int, /*year added*/
 total_years		int, /*total year of program*/
 creator			varchar(225) /*name of adder*/ 
 
-
 );
+
 
 /*user table*/
 CREATE TABLE users
@@ -294,8 +303,8 @@ type 			int, /*0-regular, 1-admin*/
 esign 			varchar(255), /*location of picture from folder, pic/esign/xxx.jpg*/
 esign_pin		int(8), /*pin of esign*/
 active 			int /*0-active, 1-inactive/expired*/	
-);
 
+);
 
 
 /*table for student penalties*/
@@ -313,7 +322,6 @@ type			int /*0-library,1-guidance,2-laboratory*/
 );
 
 
-
 /*Graduation applications for students table*/
 CREATE TABLE grad_application
 (
@@ -325,8 +333,6 @@ form				varchar(255), /*location from pic/gradappli/xxxx.jpg/*/
 approved_by			varchar(255) /*name of approver, NULL of disapprover*/
 
 );
-
-
 
 
 /*student academic documents table*/
@@ -343,6 +349,7 @@ status				int /*0-incomplete, 1-complete*/
 
 );
 
+
 /*table that lists required docu's needed for those students*/
 CREATE TABLE acad_docu_required
 (
@@ -355,40 +362,74 @@ required_for int /*the document is for, eg. 0-regular , 1-shiftee, 2-tranferee, 
 );
 
 
-
-
-
-
-
 /*--------------------------------------------------------------------*/
 /*REGISTRAR*/
 
 
+/*table for student applicants to be observed*/
 CREATE TABLE student_applicants 
 (
 
 stdnt_appli_id int PRIMARY KEY auto_increment,
-fname varchar(255),
-mname varchar(255),
-lname varchar(255),
-email varchar(255),
-address varchar(255),
-last_school varchar(255),
-last_school_add varchar(255), /*address*/
-exam_result int,
-evaluation varchar(255),
-evaluator varchar(255),
-course_1 varchar(255),
-course_2 varchar(255),
-course_3 varchar(255),
-status int /* 0- unaccepted, 1- accepted by admission etc*/
+fname varchar(255), /*first name*/
+mname varchar(255), /*middle name*/
+lname varchar(255), /*last name*/
+email varchar(255), /*email*/
+add_house_no 	int, /*address house/building number*/
+add_strt_name 	varchar(255), /*address street name*/
+add_province 	varchar(255), /*address province*/
+add_city		varchar(255), /*address city/municipality*/
+add_barangay	varchar(255), /*address barangay*/
+add_region		varchar(10), /*address region*/
+contact_no varchar(20), /*contact number*/
+last_school varchar(255), /*last school*/
+last_school_add varchar(255), /*last school address*/
+status int /* 0- unaccepted, 1- accepted by admission etc, 2- pending*/
 
 );
 
 
+/*table for applicants evaluations*/
+CREATE TABLE school_evaluation
+(
+
+school_eval_id int primary key auto_increment,
+stdnt_appli_id int, /*foreign key from student_applicants table*/
+exam_result int, /*score*/
+evaluation varchar(255), /*evaluation comment*/
+evaluator varchar(255) /*evaluator*/
+
+);
 
 
+/*table for college applicants*/
+CREATE TABLE college_applicants
+(
 
+stdnt_appli_id int, /*foreign key from student_applicants table*/
+shs_school varchar(255), /*senior high school*/
+shs_track varchar(255), /*??*/
+jhs varchar(255), /*junior high school*/
+pref_course1 varchar(255), /*1st course preferred*/
+pref_course2 varchar(255), /*2nd course prefereed*/
+pref_course3 varchar(255) /*3rd course preferred*/
+
+);
+
+
+/*table for SHS applicants*/
+CREATE TABLE shs_applicants
+(
+
+stdnt_appli_id int,  /*foreign key from student_applicants table*/
+jhs_school varchar(255), /*junior high school*/
+pref_track1 varchar(255), /*preferred track 1*/
+pref_track2 varchar(255) /*preferred track 2*/
+
+);
+
+
+/*table for student applicant documents*/
 CREATE TABLE student_applicants_docu
 (
 
@@ -401,8 +442,7 @@ receiver varchar(255) /*receiver*/
 );
 
 
-
-
+/*table for student requests*/
 CREATE TABLE student_requests
 (
 
@@ -414,8 +454,7 @@ approved_by varchar(255) /*name of approver*/
 
 );
 
-
-
+/*table for student messages */
 CREATE TABLE student_messages
 (
 
@@ -429,7 +468,6 @@ attachment varchar(255), /*if add file, put location messages/attachments/xxxx.x
 deleted int /*default 0,if receiver deletes message, value is 1 */
 
 );
-
 
 
 CREATE TABLE faculty_messages
@@ -447,7 +485,6 @@ deleted int /*default 0,if receiver deletes message, value is 1 */
 );
 
 
-
 CREATE TABLE student_announcements
 (
 
@@ -460,7 +497,6 @@ ay varchar(9), /*academic year, eg "2018-2019"*/
 sem varchar(10) /*semester eg. '1st','2nd','summer'*/
 
 );
-
 
 
 CREATE TABLE faculty_announcements
@@ -493,7 +529,6 @@ reason varchar(255) /*reason of excused or absence*/
 );
 
 
-
 CREATE TABLE faculty_attendance
 (
 
@@ -521,6 +556,7 @@ status int /*0-inactive, 1-active*/
 
 );
 
+
 CREATE TABLE librarian
 (
 
@@ -530,14 +566,25 @@ college_id int, /*foreign key from colleges table*/
 status int /*0-inactive 1-active*/
 
 );
+
+/*table for the program and their current curriculum*/
+CREATE TABLE program_curriculum
+(
+
+program_id int, /*foreign key from program table*/
+curriculum_id int, /*foreign key from curriculum table*/
+total_years int, /*number of years of a program*/
+year_started datetime /*originating year*/
+
+);
+
+
 /*--------------------------------------------------------------------*/
 /*ACCOUNTING*/
-
 /* the following are tables for accounting*/
 
 
 /* table for the cashiering module*/
-
 CREATE TABLE cashiering_module
 (
 
@@ -554,11 +601,9 @@ courses_paid_for		varchar(255)	/* subjects/courses in the current sem paid */
 );
 
 
-
 /* table for the accounting journal*/
 /* contains the balance sheet for the users account such as debit, credit, name or type of transaction*/
 /* a record of transactions*/
-
 CREATE TABLE accounting_journal
 (
 
@@ -576,10 +621,7 @@ paid_by					varchar(225)	/*the person paying*/
 );
 
 
-
-
 /*table for incoming and outgoing payments*/
-
 CREATE TABLE payments
 (
 
@@ -597,9 +639,8 @@ discounted_amount		decimal(10,2)	/*amount discounted from the total amount of pa
 );
 
 
-
-
 /*-------------------------CMS TABLES----------------*/
+
 
 /*for module function maintenance*/
 CREATE TABLE modules_functions
@@ -612,6 +653,7 @@ availability 		int /*0-hidden, 1- available*/
 
 );
 
+
 /*table for portal features*/
 CREATE TABLE portal_features
 (
@@ -623,6 +665,7 @@ event_pic2		  varchar(255),/*location of event picture 2 in portal, eg. portal/e
 event_pic3		  varchar(255)/*location of event picture 3 in portal, eg. portal/events/xxxx.jpg*/
 
 );
+
 
 /*table of calendar events*/
 CREATE TABLE calendar_events
@@ -641,6 +684,7 @@ creator varchar(255) /*name of creator*/
 /*table that contains semesters and defines current semester */
 CREATE TABLE semesters
 (
+
 semester_id				int PRIMARY KEY auto_increment,
 semester_name			varchar(255), /*name*/
 date_start				datetime, /*date start*/
@@ -648,10 +692,12 @@ date_end				datetime, /*date end*/
 enrollment_start		datetime, /*enrollment date start*/
 enrollment_end			datetime, /*enrollment date end*/
 right_now				int /*0-no 1-yes, 1 if in date_start and date_end*/
+
 );
 
 CREATE TABLE program_courses
 (
+
 curriculum_id int, /*foreign key from curriculum table*/
 program_id int, /*foreign key from program table*/
 course_id int, /*foreign key from courses table*/
@@ -659,21 +705,37 @@ year_level int, /*eg 1,2,3,4,5*/
 semester varchar(10), /*eg 1,2,SUMMER*/
 pre_req  varchar(255), /*course codes of pre-requisites, separated by comma*/
 co_req	varchar(255) /*course coudes of co-requisites, separated by comma*/
+
 );
 
 
-
 /*Foreign Key Initialization*/
+ALTER TABLE `school_evaluation`
+	ADD CONSTRAINT `school_evaluation_cns_1` FOREIGN KEY (`stdnt_appli_id`) REFERENCES `student_applicants` (`stdnt_appli_id`);
+
+ALTER TABLE `college_applicants`
+	ADD CONSTRAINT `college_applicants_cns_1` FOREIGN KEY (`stdnt_appli_id`) REFERENCES `student_applicants` (`stdnt_appli_id`);
+
+ALTER TABLE `shs_applicants`
+	ADD CONSTRAINT `shs_applicants_cns_1` FOREIGN KEY (`stdnt_appli_id`) REFERENCES `student_applicants` (`stdnt_appli_id`);
+
+ALTER TABLE `program_curriculum`
+	ADD CONSTRAINT `program_curriculum_cns_1` FOREIGN KEY (`program_id`) REFERENCES `program` (`program_id`),
+	ADD CONSTRAINT `program_curriculum_cns_2` FOREIGN KEY (`curriculum_id`) REFERENCES `curriculum` (`curriculum_id`);
+
+ALTER TABLE `faculty_courses`
+	ADD CONSTRAINT `faculty_courses_cns_1` FOREIGN KEY (`faculty_id`) REFERENCES `faculty` (`faculty_id`),
+	ADD CONSTRAINT `faculty_courses_cns_2` FOREIGN KEY (`faculty_load_id`) REFERENCES `faculty_load` (`faculty_load_id`),
+	ADD CONSTRAINT `faculty_courses_cns_3` FOREIGN KEY (`course_schedule_id`) REFERENCES `course_schedules` (`course_schedule_id`);
+
 ALTER TABLE `course_schedules`
 	ADD CONSTRAINT `course_schedules_cns_1` FOREIGN KEY (`curriculum_id`) REFERENCES `curriculum` (`curriculum_id`),
 	ADD CONSTRAINT `course_schedules_cns_2` FOREIGN KEY (`course_id`) REFERENCES `courses` (`course_id`);
-
 
 ALTER TABLE `program_courses`
 	ADD CONSTRAINT `program_courses_cns_1` FOREIGN KEY (`curriculum_id`) REFERENCES `curriculum` (`curriculum_id`),
 	ADD CONSTRAINT `program_courses_cns_2` FOREIGN KEY (`program_id`) REFERENCES `program` (`program_id`),
 	ADD CONSTRAINT `program_course_cns_3` FOREIGN KEY (`course_id`) REFERENCES `courses` (`course_id`);
-
 	
 ALTER TABLE `stdnt_info`
 	ADD CONSTRAINT `stdnt_info_cns_1` FOREIGN KEY (`person_id`) REFERENCES `person` (`person_id`),
@@ -762,24 +824,3 @@ ALTER TABLE `guidance_personnel`
 ALTER TABLE `librarian`
 	ADD CONSTRAINT `librarian_cns_1` FOREIGN KEY (`person_id`) REFERENCES `person` (`person_id`),
 	ADD CONSTRAINT `librarian_cns_2` FOREIGN KEY (`college_id`) REFERENCES `colleges` (`college_id`);
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
