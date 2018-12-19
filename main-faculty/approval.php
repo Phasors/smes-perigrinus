@@ -1,69 +1,58 @@
-
 <?php include 'header.php'; ?>
 
+<div class="wrapper">
+
+	<?php include 'components/sidebar.php'; ?>
+	<div id="content">
+		<!-- for phone view -->
+		<?php include 'components/topbar.php'; ?>
+		
+		<div id="content-body">
+			<div class="container">
+				<h3 class="text-center announce-title">APPROVALS</h3>
+
+				<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link nav-tabs-cst active" id="nav-personal-tab" data-toggle="pill" href="#incurred" role="tab" aria-controls="pills-incurred" aria-selected="true">INCURRED APPROVAL(S)</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link nav-tabs-cst" id="cleard" data-toggle="pill" href="#cleared" role="tab" aria-controls="pills-cleared" aria-selected="false">CLEARED APPROVAL(S)</a>
+					</li>
+				</ul>
+				<hr>
+
+				<div class="tab-content" id="pills-tabContent">
+					<div class="tab-pane fade show active" id="incurred" role="tabpanel" aria-labelledby="incurred">
+						<div class="alert alert-light alert-dismissible fade show">
+							<!-- <button type="button" class="close" data-dismiss="alert">&times;</button> -->
+							<strong>NOPE!</strong> Indicates a successful or positive action.
+						</div>
+						<div class="alert alert-light alert-dismissible fade show">
+							<!-- <button type="button" class="close" data-dismiss="alert">&times;</button> -->
+							<strong>NOPE!</strong> Indicates a successful or positive action.
+						</div>
+					</div>
+
+					<div class="tab-pane fade" id="cleared" role="tabpanel" aria-labelledby="cleared">
+						<div class="alert alert-light alert-dismissible fade show">
+							<!-- <button type="button" class="close" data-dismiss="alert">&times;</button> -->
+							<strong>Success!</strong> Indicates a successful or positive action.
+						</div>
+						<div class="alert alert-light alert-dismissible fade show">
+							<!-- <button type="button" class="close" data-dismiss="alert">&times;</button> -->
+							<strong>Success!</strong> Indicates a successful or positive action.
+						</div>
+					</div>
+				</div>
+
+				
+			</div>
 
 
-<div id="content-body">
-
-    <!-- MANAGE EMPLOYEES -->
-    <nav>
-        <div class="nav nav-tabs nav-tabs-cst" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link nav-cst active" id="nav-personal-tab" data-toggle="tab" href="#nav-personal" role="tab" aria-controls="nav-employee" aria-selected="true">INCURRED APPROVAL</a>
-            <a class="nav-item nav-link nav-cst" id="nav-family-back-tab" data-toggle="tab" href="#nav-family-back" role="tab" aria-controls="nav-family-back" aria-selected="false">CLEARED APPROVAL(S)</a>
-        </div>
-    </nav>
-
-    <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-personal" role="tabpanel" aria-labelledby="nav-personal-tab">
-            <br>
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <h6>You have not returned the book entitled "FAULT IN OUR STARS By John Green !"</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <h6>You have not returned the book entitled "FAULT IN OUR STARS By John Green !"</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="nav-family-back" role="tabpanel" aria-labelledby="nav-profile-tab">
-
-            <br>
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <h6>You have returned the book entitled "FAULT IN OUR STARS By John Green !"</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <h6>You have returned the book entitled "FAULT IN OUR STARS By John Green !"</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        </div>
-        
-    </div>
-
-</div> <!-- conter-body -->
+			<?php include 'components/bottom-navbar.php'; ?>
+		</div> <!-- content-body -->
+	</div> <!-- content -->
+</div> <!-- wrapper -->
 
 
-
-<?php include 'footer.php';?>
+<?php include 'footer.php'; ?>

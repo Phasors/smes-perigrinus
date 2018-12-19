@@ -1,5 +1,6 @@
 <form>
 
+
     <br>
     <div class="row">
         <div class="col-sm-6">
@@ -15,6 +16,7 @@
                                 <span id="label-span">CHOOSE FILE</span>
                             </label>
                             <input type="file" id="form9" name="file" class="form-control validate"> <!-- multiple="true" -->
+                            <!-- <button type="button" id="main-menu" class="btn btn-info btn-menu-ctm"><i class="fa fa-bars"></i></button> -->
                         </div>
                     </div>
                 </div>
@@ -26,9 +28,8 @@
             </div>
         </div>
     </div>
-   
-    <br>
 
+    <br>
     <div class="card">
         <div class="card-body">
             <div class="form-group">
@@ -104,7 +105,7 @@
                 </div>
             </div>
 
-
+            
             <div class="form-group">
                 <label for="address">Address</label>
                 <div class="row">
@@ -123,15 +124,15 @@
                 </div>
 
                 <div class="form-group col-sm-5">
-                    <label for="tel_cel">Contact No.</label>
+                    <label for="tel_cel">Telephone No./Cellphone No.</label>
                     <input type="text" name="name" id="tel_cel" class="form-control">
                 </div>
             </div>
+
+
         </div>
     </div>
 </form>
 
+
 <br>
-
-
-

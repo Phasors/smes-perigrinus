@@ -1,24 +1,43 @@
-  $(document).ready(function () {
-  	$('#main-menu').on('click', function () {
-  		$('#sidebar').toggleClass('active');
-  	});
-  });
+// $("#sidebar").css({
+// 	"height": $(window).height() + "px"
 
-  $(document).ready(function () {
-    $('#main-menu').on('click', function () {
-      $('#sidebar-regis').toggleClass('active');
-    });
-  });
+// });
 
-  // $(document).ready(function () {
-  // 	$('img.picture-login').fadeIn(1000).removeClass('picture-login');
-  // });
+// alert($(document).height());
 
-  // $(document).ready(function () {
-  // 	$('div.login').fadeIn(800).removeClass('login');
-  // });
+// $(window).on('resize', function(){
+// 	var win = $(this); 
+// 	if (win.width() <= 1400 ) {
+// 		$("#sidebar").css({
+// 			"overflow-y": "scroll" , 
+// 			"height": $(window).height() + "px" 
+// 		});
+
+// 	} else {
+// 		$("#sidebar").css({
+// 			"height": "unset",
+// 			"overflow-y" : "hidden"
+// 		});
+// 	}
+
+// });
 
 
+$(document).ready(function(){
+	$("#form9").on("change",function(e){
+		var filename = e.target.value.split('\\').pop();
+		$("#label-span").text(filename);
+	});
+});
+
+
+
+
+$(document).ready(function () {
+	$('#main-menu').on('click', function () {
+		$('#sidebar').toggleClass('active');
+	});
+});
 
 
   $(document).ready(function(){
@@ -70,42 +89,4 @@
   });
 
 
-
-// -----------------FOR MULTIPLE FILE UPLOAD---------------------- 
-  // $(document).ready(function(){
-  //   $("#form9").on("change",function(e){
-  //     var files = $(this)[0].files;
-  //     if(files.length >= 2){
-  //       $("#label-span").text(files.length + " files ready to upload");
-  //     }
-  //     else{
-  //       var filename = e.target.value.split('\\').pop();
-  //       $("#label-span").text(filename);
-  //     }
-  //   });
-  // });
-
-
-  $(document).ready(function(){
-    $("#form9").on("change",function(e){
-      var filename = e.target.value.split('\\').pop();
-      $("#label-span").text(filename);
-    });
-  });
-
-
-  // FOR FIRST LOAD OF INDEX.PHP
-  $(document).ready(function(){
-    if(window.location.href == "http://localhost/elec4/main-faculty/"){
-      $('#sidebar').attr('id', 'sidebar-regis');
-      $('#main-menu').hide();
-    }
-    else{
-      $('main-menu').show();
-    }
-  });
-
-
-
-
-
+  

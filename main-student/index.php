@@ -10,10 +10,10 @@
 				<img src="img/logo-site.png" class="d-block mx-auto logo">
 			</div>
 		</div>
-		<div class="col-sm-8">
+		<div class="col-sm-8" style="margin-top: 2%;">
 			<div class="center">
-				<span class="welcome">PERIGRINUS SCHOOL</span>
-				<span class="stud-name">Welcome, Name of Student</span>
+				<h2 class="welcome">PERIGRINUS SCHOOL</h2>
+				<h3 class="stud-name">Welcome, Name of Student</h3>
 
 			</div>
 		</div>

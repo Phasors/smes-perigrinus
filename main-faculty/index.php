@@ -1,62 +1,46 @@
 
 <?php include 'header.php'; ?>
 
+<?php include 'components/topbar.php'; ?>
 
-
-<div id="content-body">
-
-	<div class="container" style="margin-top: 5%;">
-		<div class="center">
-			<span class="welcome"> WELCOME</span>
-			<span class="prof-name">Name of Prof</span>
-		</div>
-		<hr>
-
-		<div class="row" style="margin-top: 5%;">
-			<div class="col-sm-4">
-				<a href="#" >
-					<button class="d-block mx-auto btn-dash">
-						<h3>MY SCHEDULE</h3>
-					</button>
-				</a>
-			</div>
-			<div class="col-sm-4">
-				<a href="grades.php">
-					<button class="d-block mx-auto btn-dash">
-						<h3>GRADES</h3>
-					</button>
-				</a>
-			</div>
-			<div class="col-sm-4">
-				<a href="myprofile.php">
-					<button class="d-block mx-auto btn-dash">
-						<h3>MY PROFILE</h3>
-					</button>
-				</a>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="">
+				<img src="img/logo-site.png" class="d-block mx-auto logo">
 			</div>
 		</div>
-		
-		<div class="row" style="margin-top: 5%;">
-			<div class="col-sm-6">
-				<a href="class_info.php">
-					<button class="d-block mx-auto btn-dash">
-						<h3>CLASS INFO</h3>
-					</button>
-				</a>
+		<div class="col-sm-8" style="margin-top: 2%;">
+			<div class="center">
+				<h2 class="welcome">PERIGRINUS SCHOOL</h2>
+				<h3 class="stud-name">Welcome, Name of Faculty</h3>
 			</div>
-			<div class="col-sm-6">
-				<a href="approval.php">
-					<button class="d-block mx-auto btn-dash">
-						<h3>APPROVALS</h3>
-					</button>
-				</a>
+		</div>
+	</div>
+	<hr>
+	<br>
+	<div class="margin">
+		<div class="row">
+			<div class="col-sm-2 col">
+				<a href="announcement.php"><img src="img/announcement-icon.png" class="icon block"></a>
+			</div>
+			<div class="col-sm-2 col">
+				<a href="approval.php"><img src="img/request-icon.png" class="icon block"></a>
+			</div>
+			<div class="col-sm-2 col">
+				<a href="#sched"><img src="img/sched-icon.png" class="icon block"></a>
+			</div>
+			<div class="col-sm-2 col">
+				<a href="grade.php"><img src="img/grade-icon.png" class="icon block"></a>
+			</div>
+			<div class="col-sm-2 col">
+				<a href="class_info.php"><img src="img/record-icon.png" class="icon block"></a>
+			</div>
+			<div class="col-sm-2 col">
+				<a href="myprofile.php"><img src="img/profile-icon.png" class="icon block"></a>
 			</div>
 		</div>
 	</div>
 
 
-</div> <!-- conter-body -->
-
-
-
-<?php include 'footer.php';?>
+	<?php include 'components/footer.php'; ?>
