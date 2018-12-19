@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>STUDENT</title>
+	<title>FACULTY</title>
 	<link rel="icon" type="image/png" href="img/logo-site.png">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
