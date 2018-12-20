@@ -21,3 +21,22 @@
 
     </div>
 </nav>
+
+
+<div class="home">
+    <div class="hometool">
+        <a href="../main-student" class="btn btn-success">
+            <i class="fa fa-home"></i>
+        </a>
+        <span class="home-tooltiptext">HOME</span>
+    </div>
+</div>
+
+<div class="logout">
+    <div class="logouttool">
+        <a href="#logout" class="btn btn-success">
+            <i class="fa fa-sign-out"></i>
+        </a>
+        <span class="log-tooltiptext">LOGOUT</span>
+    </div>
+</div>

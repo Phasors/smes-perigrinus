@@ -12,14 +12,10 @@
 				<img src="img/logo-site.png" class="d-block mx-auto logo">
 			</div>
 		</div>
-		<div class="col-sm-8">
+		<div class="col-sm-8" style="margin-top: 2%;">
 			<div class="center">
 				<span class="welcome">PERIGRINUS SCHOOL</span>
-				<!-- <span class="prof-name">
-					WELCOME, Name of Student
-				</span> -->
 				<span class="stud-name">Welcome, <?php  echo $_SESSION['username'];?></span>
-
 			</div>
 		</div>
 	</div>

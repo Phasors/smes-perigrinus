@@ -35,15 +35,3 @@
         </ul>
     </div>
 </nav>
-
-<div class="home">
-    <a href="../main-student" class="btn btn-success">
-        <i class="fa fa-home"></i>
-    </a>
-</div>
-
-<div class="logout">
-    <a href="logout.php" class="btn btn-success">
-        <i class="fa fa-sign-out"></i>
-    </a>
-</div>

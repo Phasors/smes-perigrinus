@@ -57,7 +57,7 @@
 					<p class="lead"> Perigrinus School Services include primary to college level teaching, career, individual and academic counseling, course selection, 4-5 year planning, scheduling, financial aid guidance and grade reporting services.</p>				
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-					<a href="services/service.php"><button type="button" class="btn btn-outline-secondary btn-lg"> See Services </button></a>
+					<a href="home-services/service.php"><button type="button" class="btn btn-outline-secondary btn-lg"> See Services </button></a>
 				</div>
 			</div>
 		</div>
