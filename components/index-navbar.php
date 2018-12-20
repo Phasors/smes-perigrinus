@@ -43,15 +43,15 @@
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 					</div>
 					<div class="modal-body">
-						<form>
+						<form action="login/login_script.php" method="POST">
 							<div class="row">
 								<div class="col-sm-12">
-									<input type="text" name="" class="form-control" placeholder="Username">
+									<input type="text" name="user" class="form-control" placeholder="Username">
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-sm-12">
-									<input type="password" name="" class="form-control" placeholder="Password">
+									<input type="password" name="pass" class="form-control" placeholder="Password">
 								</div>
 							</div>
 							<div class="row">

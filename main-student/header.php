@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php SESSION_START();?>
 <html>
 <head>
 	<title>STUDENT</title>

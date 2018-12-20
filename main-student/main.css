@@ -6,31 +6,9 @@ body{
 }
 
 
-.login-logo {
-    width: 400px;
-    height:450px;
-    margin-top: 10%;
+.center span{
+    display:block;
 }
-
-.login-form{
-    margin-top: 20%;
-}
-.login-title{
-    color: #007a81;
-}
-
-@media (max-width: 500px) {
-  .login-logo{
-    height: 220px;
-    width: 220px;
-  }
-  .login-form{
-    margin-top: 0;
-  }
-
-}
-
-
 
 .welcome{
 	margin-top: 35px;

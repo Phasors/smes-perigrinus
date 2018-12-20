@@ -1,0 +1,47 @@
+if($q==){
+$sql="SELECT * FROM  ";
+$result = mysqli_query($db,$sql);
+
+echo '<table  id="keywords" cellspacing="0" cellpadding="0" width="100%">
+	<thead>
+		<tr>
+			<th width=""></th>
+			<th width=""></th>
+			<th width=""></th>
+			<th width=""></th>
+			<th width=""></th>
+			<th width=""></th>
+			<th width=""></th>
+			<th width=""></th>
+			</tr>
+		</thead>
+		<tbody>';
+			while ($row = mysqli_fetch_array($result))
+			{
+				$a=$row[''];
+				$b=$row[''];
+				$c=$row[''];
+				$d=$row[''];
+				$e=$row[''];
+				$f=$row[''];
+				$g=$row[''];
+				$h=$row[''];
+				$i=$row[''];
+
+
+				echo "<tr user_id='$a'>";
+					echo "<td>$b</td>";
+					echo "<td>$c</td>";
+					echo "<td>$d</td>";
+					echo "<td>$e</td>";
+					echo "<td>$f</td>";
+					echo "<td>$g</td>";
+					echo "<td>$h</td>";
+					echo "<td>$i</td>";
+				echo "</tr> ";
+
+			}
+		echo "</tbody>
+	</table>";
+
+}

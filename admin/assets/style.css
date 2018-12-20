@@ -1,0 +1,33 @@
+.contnt{
+	padding: 55px 30px;
+}
+table {
+    border-collapse: collapse;
+	margin: 0 auto;
+	border: 3px solid #228B22;
+	border-radius: 5px;
+}
+
+thead{
+	cursor: pointer;
+	background: #228B22;
+	font-weight: bold;
+	color: white;
+}
+thead ,tr ,th { 
+	padding: 15px 0px;
+	text-align: center;
+}
+tbody tr{
+	background-color: white;
+}
+tbody , td {
+	text-align: left;
+	padding: 10px 15px;
+	border-bottom: 1px solid #228B22;
+	cursor: pointer;
+}
+tbody tr:hover {
+	background-color:#98FB98;
+	color: black;
+}
