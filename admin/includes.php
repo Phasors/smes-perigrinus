@@ -1,5 +1,7 @@
 <html>
 <head>
+<script src="assets/modal/jquery.min.js"></script>
+	<script src="assets/modal/bootstrap.min.js"></script>
 	<script src="assets/css/jquery/jquery.min.js"></script>
 	<script src="assets/css/bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -8,9 +10,9 @@
 	<script src="assets/css/datatables/js/jquery.dataTables.min.js"></script>
 	<script src="assets/css/datatables-plugins/dataTables.bootstrap.min.js"></script>
 	<script src="assets/css/datatables-responsive/dataTables.responsive.js"></script>
-	<!-- automatic logout after 5 minutes
+		
+	<!-- automatic logout after 5 minutes -->
 	<meta http-equiv="refresh" content="300;url=logout.php" />
--->
 	<title>ADMIN</title>
 </head>
 <body>

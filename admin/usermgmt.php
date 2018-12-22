@@ -1,10 +1,6 @@
 
 <html>
 <head>
-	<!-- automatic logout after 3 minutes-->
-	<meta http-equiv="refresh" content="180;url=logout.php" />
-	<script src="assets/modal/jquery.min.js"></script>
-	<script src="assets/modal/bootstrap.min.js"></script>
 </head>
 <body>
 	<?php
