@@ -14,7 +14,7 @@
 				<select class="form-control" id="users" name="users" onchange="user(this.value)">
 					<option value="" selected>Please Select Type of User</option>
 					<option value="9">Accounting</option>
-					<option value="7">Admin</option>
+					<option value="7">Admission</option>
 					<option value="8">Cashier</option>
 					<option value="3">Chairperson</option>
 					<option value="2">Dean</option>
@@ -23,6 +23,7 @@
 					<option value="1">Professor</option>
 					<option value="6">Registrar</option>
 					<option value="0">Student</option>
+					<option value="10">Super Admin</option>
 				</select>
 			</form>
 		</div>
@@ -232,14 +233,10 @@
 					<div class="modal-body">
 						<form action="editacct.php" method="post" enctype="multipart/form-data">
 							<div class="row">
-								<div class = "col-sm-8">
+								<div class = "col-sm-12">
 									<label> Name </label>
 									<input type="text" id="name" name="name" class="form-control" disabled="disabled">
 									<input type="hidden" id="trackno" name="trackno" class="form-control" >
-								</div>
-								<div class = "col-sm-4">
-									<label>Picture</label>
-									<input type="file" style="height: 35px" name="fileToUpload"/> 
 								</div>
 							</div>	
 							<div class="row">
@@ -253,7 +250,6 @@
 										<option value="1" id="1">Admin</option>
 										<option value="2" id="2">Assitant</option>
 										<option value="0" id="0">Regular</option>
-										<option value="3" id="3">Super Admin</option>
 									</select>
 								</div>
 							</div>
@@ -267,6 +263,32 @@
 			</div>
 		</div>
 
+		<!-- Modal for Change Picture -->
+		<div class="modal fade" id="cp" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content"  style="width:50%; margin:auto">
+					<div class="modal-header" >
+						<button type="button" class="close" data-dismiss="modal" >&times;</button>
+						<h2 class="modal-title text-center">Change Picture</h2>
+					</div>
+					<div class="modal-body">
+						<form action="useract.php?action=cp" method="post" enctype="multipart/form-data">
+							<div class="row col-sm-12">
+								<label>Picture</label>
+								<input type="file" style="height: 35px" name="fileToUpload"/> 
+								<input type="hidden" id="cpid" name="trackno" class="form-control" >
+							</div>
+							<div class="row text-center">
+								<input type="submit" class="btn btn-success" style="width:20%" value="Submit">
+							</div>
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
 		<script>
 			function user(str) {
 				if (str == "") {
@@ -294,7 +316,10 @@
     }
 
 }
-
+function cp(num){
+	trackno = document.getElementById("trackno".concat(num)).innerHTML;
+	document.getElementById("cpid").value = trackno;
+}
 function editAcc(num){
 	trackno = document.getElementById("trackno".concat(num)).innerHTML;
 	name = document.getElementById("name".concat(num)).innerHTML;
@@ -313,16 +338,10 @@ function editAcc(num){
 	else if (type=='assitant'){
 		document.getElementById("2").selected = "true";
 	}
-	else if (type=='super admin'){
-		document.getElementById("3").selected = "true";
-	}
 	else{
 		//do nothing
 	}
 	
-}
-function addAcc(cat){
-	document.getElementById("addcat").value = cat;
 }
 function deactivate(name, trackno){
 	if(confirm("Are you sure to deactivate " + name +" account?")){

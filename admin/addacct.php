@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
      //learn to email the geneated password -- can auto generate
      //$pword = password_generate(16);
      $pword = "12345";
-     $pswrd = password_hash('$pword', PASSWORD_DEFAULT);
+     $pswrd = password_hash($pword, PASSWORD_DEFAULT);
 
      $sqla = "SELECT person_id FROM person WHERE fname='$fname' AND mname='$mname' AND lname='$lname' AND contact_no='$contact_no'";
      $querya = mysqli_query($db,$sqla);

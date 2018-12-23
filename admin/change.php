@@ -1,8 +1,51 @@
 <?php
 include ('connect.php');
 include ('adddata.php');
+include ('editdata.php');
+
 $q = intval($_GET['q']);
 
+if($q==46){
+	$sql="SELECT * FROM academic_year ";
+	$result = mysqli_query($db,$sql);
+
+	echo '<table  id="keywords" cellspacing="0" cellpadding="0" width="100%">
+	<thead>
+	<tr>
+	<th width="">ay_id</th>
+	<th width="">ay_desc</th>
+	<th width="">ay_start</th>
+	<th width="">ay_end</th>
+	<th width="">right_now</th>
+	<th> ACTIONS </th>
+	</tr>
+	</thead>
+	<tbody>';
+	while ($row = mysqli_fetch_array($result))
+	{
+		$a=$row['ay_id'];
+		$b=$row['ay_desc'];
+		$c=$row['ay_start'];
+		$d=$row['ay_end'];
+		$e=$row['right_now'];
+
+		echo "<tr user_id='$a'>";
+		echo "<td id='ay_id$a'>$a</td>";
+		echo "<td id='ay_desc$a' >$b</td>";
+		echo "<td id='ay_start$a' >$c</td>";
+		echo "<td id='ay_end$a' >$d</td>";
+		echo "<td id='right_now$e' >$e</td>";
+		echo "<td><button type='button' class='btn btn-info' data-toggle='modal' data-target='#edit46' onclick='edit46($a)'> Edit</button>";
+		echo "</tr> ";
+
+	}
+	echo "</tbody>
+	</table>";
+	echo"
+	<center>
+	<button type='button' class='btn btn-success' data-toggle='modal' data-target='#add46' style='margin:10px'> Add New Data</button>
+	</center>";
+}
 if($q==1){
 	$sql="SELECT * FROM acad_back_info ";
 	$result = mysqli_query($db,$sql);

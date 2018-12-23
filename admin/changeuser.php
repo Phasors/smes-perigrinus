@@ -54,16 +54,18 @@ while ($row = mysqli_fetch_array($result))
 	echo "<td id='type$trackno'>$type</td>";
 	echo "<td id='esign$trackno' > <img src='$esign' style='width:50px;height:50px;'></td>";
 	if($active==0){
-		echo "<td>
-		<button type='button' class='btn btn-info' data-toggle='modal' data-target='#edit' onclick='editAcc(".$trackno.")'  style='width:30%'>Edit</button>
-		<button type='button' class='btn btn-warning' onclick='reset(\"".$name."\",".$trackno.")' style='width:30%'>RP</button>
-		<button type='button' class='btn btn-danger' onclick='deactivate(\"".$name."\",".$trackno.")' style='width:30%'>DE</button>";
+		echo "<td class='text-center'>
+		<button type='button' class='btn btn-info' data-toggle='modal' data-target='#edit' onclick='editAcc(".$trackno.")'  style='width:20%'>Edit</button>
+		<button type='button' class='btn btn-info' data-toggle='modal' data-target='#cp'  onclick='cp(".$trackno.")'style='width:20%'>CP</button>
+		<button type='button' class='btn btn-warning' onclick='reset(\"".$name."\",".$trackno.")' style='width:20%'>RP</button>
+		<button type='button' class='btn btn-danger' onclick='deactivate(\"".$name."\",".$trackno.")' style='width:20%'>DE</button>";
 	} 
 	else{
-		echo "<td>
-		<button type='button' class='btn btn-info' data-toggle='modal' data-target='#edit' onclick='editAcc(".$trackno.")' style='width:30%'>Edit</button>
-		<button type='button' class='btn btn-warning' onclick='reset(\"".$name."\",".$trackno.")' style='width:30%'>RP</button>
-		<button type='button' class='btn btn-success' onclick='activate(\"".$name."\",".$trackno.")' style='width:30%'>AC</button>";
+		echo "<td class='text-center'>
+		<button type='button' class='btn btn-info' data-toggle='modal' data-target='#edit' onclick='editAcc(".$trackno.")' style='width:20%'>Edit</button>
+		<button type='button' class='btn btn-info' data-toggle='modal' data-target='#cp'  style='width:20%'>CP</button>
+		<button type='button' class='btn btn-warning' onclick='reset(\"".$name."\",".$trackno.")' style='width:20%'>RP</button>
+		<button type='button' class='btn btn-success' onclick='activate(\"".$name."\",".$trackno.")' style='width:20%'>AC</button>";
 	}
 	echo "</td>";
 	echo "</tr> ";

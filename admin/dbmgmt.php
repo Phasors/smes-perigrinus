@@ -1,7 +1,10 @@
 <?php
 include("includes.php");
 include('session.php');
-if($_SESSION['type'] != "3"){
+include ('adddata.php');
+include ('editdata.php');
+
+if($_SESSION['category'] != "10"){
 	header("location: logout.php");
 }
 ?>
@@ -15,7 +18,8 @@ if($_SESSION['type'] != "3"){
 			<form>
 				<select class="form-control" name="users" onchange="change(this.value)">
 					<option value="0" selected>Please Select Specific Table</option>
-					<option value="1">acad_back_info</option>
+					<option value="46">academic_year</option>
+					<!--<option value="1">acad_back_info</option>
 					<option value="2">acad_docu</option>
 					<option value="3">acad_docu_required</option>
 					<option value="4">accounting_journal</option>
@@ -43,7 +47,7 @@ if($_SESSION['type'] != "3"){
 					<option value="28">portal_features</option>
 					<option value="29">prnt_grdn_info</option>
 					<option value="30">program</option>
-					<!--<option value="31">program_courses</option>
+					<option value="31">program_courses</option>
 					<option value="32">program_curriculum</option>
 					<option value="33">schedules</option>
 					<option value="34">school_evaluation</option>
@@ -56,8 +60,8 @@ if($_SESSION['type'] != "3"){
 					<option value="41">student_applicants_docu</option>
 					<option value="42">student_attendance</option>
 					<option value="43">student_messages</option>
-					<option value="44">student_requests</option> -->
-					<option value="45">users</option>
+					<option value="44">student_requests</option>
+					<option value="45">users</option> -->
 				</select>
 			</form>
 		</div>
@@ -68,36 +72,48 @@ if($_SESSION['type'] != "3"){
 			</div>
 			
 		</div>
+
+		
 		<script>
 
 			function change(str) {
 				if (str == "") {
 					document.getElementById("show").innerHTML = "";
 					return;
-				} else { 
+				} 
+				else { 
 					if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function() {
-        	if (this.readyState == 4 && this.status == 200) {
-        		document.getElementById("show").innerHTML = this.responseText;
-        		$('#keywords').DataTable( {
-        			"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
-        		} );
-        	}
-        };
-        xmlhttp.open("GET","change.php?q="+str,true);
-        xmlhttp.send();
-    }
-}
-</script> 
-</div>
-</body>
-</html>
+				            // code for IE7+, Firefox, Chrome, Opera, Safari
+				            xmlhttp = new XMLHttpRequest();
+				        } 
+				        else {
+				            // code for IE6, IE5
+				            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				        }
+				        xmlhttp.onreadystatechange = function() {
+				        	if (this.readyState == 4 && this.status == 200) {
+				        		document.getElementById("show").innerHTML = this.responseText;
+				        		$('#keywords').DataTable( {
+				        			"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+				        		} );
+				        	}
+				        };
+				        xmlhttp.open("GET","change.php?q="+str,true);
+				        xmlhttp.send();
+				    }
+				}
+				function year46(id,desc){
+					if(confirm("Are you sure to activate " + desc +"?")){
+						window.location = "editdataaction.php?&id=" + id;
+					}
+				}
+
+				
+
+			</script> 
+		</div>
+	</body>
+	</html>
 
 
 
