@@ -8,3 +8,4 @@ function edit46(no){
 	document.getElementById("ay_start").value = ay_start;
 	document.getElementById("ay_end").value = ay_end;
 }
+

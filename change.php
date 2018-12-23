@@ -16,6 +16,7 @@ if($q==46){
 	<th width="">ay_desc</th>
 	<th width="">ay_start</th>
 	<th width="">ay_end</th>
+	<th width="">right_now</th>
 	<th> ACTIONS </th>
 	</tr>
 	</thead>
@@ -33,14 +34,8 @@ if($q==46){
 		echo "<td id='ay_desc$a' >$b</td>";
 		echo "<td id='ay_start$a' >$c</td>";
 		echo "<td id='ay_end$a' >$d</td>";
-		if ($e==0){
-			echo "<td><button type='button' class='btn btn-info' data-toggle='modal' data-target='#edit46' onclick='edit46($a)'> Edit</button>
-			<button type='button' class='btn btn-danger' onclick='year($a)'> NOW</button></td>";
-		}
-		else{
-			echo "<td><button type='button' class='btn btn-info' data-toggle='modal' data-target='#edit46' onclick='edit46($a)'> Edit</button>
-			<button type='button' class='btn btn-success' onclick='year($a)'> NOT NOW</button></td>";
-		}
+		echo "<td id='right_now$e' >$e</td>";
+		echo "<td><button type='button' class='btn btn-info' data-toggle='modal' data-target='#edit46' onclick='edit46($a)'> Edit</button>";
 		echo "</tr> ";
 
 	}

@@ -1,50 +1,46 @@
 if($q==){
-$sql="SELECT * FROM  ";
-$result = mysqli_query($db,$sql);
+	$sql="SELECT * FROM  ";
+	$result = mysqli_query($db,$sql);
 
-echo '<table  id="keywords" cellspacing="0" cellpadding="0" width="100%">
+	echo '<table  id="keywords" cellspacing="0" cellpadding="0" width="100%">
 	<thead>
-		<tr>
-			<th width=""></th>
-			<th width=""></th>
-			<th width=""></th>
-			<th width=""></th>
-			<th width=""></th>
-			<th width=""></th>
-			<th width=""></th>
-			<th width=""></th>
-			</tr>
-		</thead>
-		<tbody>';
-			while ($row = mysqli_fetch_array($result))
-			{
-				$a=$row[''];
-				$b=$row[''];
-				$c=$row[''];
-				$d=$row[''];
-				$e=$row[''];
-				$f=$row[''];
-				$g=$row[''];
-				$h=$row[''];
-				$i=$row[''];
+	<tr>
+	<th ></th>
+	<th ></th>
+	<th ></th>
+	<th></th>
+	<th> ACTIONS </th>
+	</tr>
+	</thead>
+	<tbody>';
+	while ($row = mysqli_fetch_array($result))
+	{
+		$a=$row[''];
+		$b=$row[''];
+		$c=$row[''];
+		$d=$row[''];
+		$e=$row[''];
 
+		echo "<tr user_id='$a'>";
+		echo "<td id='$a'>$a</td>";
+		echo "<td id='$a' >$b</td>";
+		echo "<td id='$a' >$c</td>";
+		echo "<td id='$a' >$d</td>";
+		if ($e==0){
+			echo "<td><button type='button' class='btn btn-info' data-toggle='modal' data-target='#edit46' onclick='edit46($a)'> Edit</button>
+			<button type='button' class='btn btn-danger' onclick='year($a)'> NOW</button></td>";
+		}
+		else{
+			echo "<td><button type='button' class='btn btn-info' data-toggle='modal' data-target='#edit46' onclick='edit46($a)'> Edit</button>
+			<button type='button' class='btn btn-success' onclick='year($a)'> NOT NOW</button></td>";
+		}
+		echo "</tr> ";
 
-				echo "<tr user_id='$a'>";
-					echo "<td>$b</td>";
-					echo "<td>$c</td>";
-					echo "<td>$d</td>";
-					echo "<td>$e</td>";
-					echo "<td>$f</td>";
-					echo "<td>$g</td>";
-					echo "<td>$h</td>";
-					echo "<td>$i</td>";
-				echo "</tr> ";
-
-			}
-		echo "</tbody>
+	}
+	echo "</tbody>
 	</table>";
-echo"
-<center>
-<button type='button' class='btn btn-success' data-toggle='modal' data-target='#add' style='margin:10px'> Add New Account</button>
-</center>";
+	echo"
+	<center>
+	<button type='button' class='btn btn-success' data-toggle='modal' data-target='#add46' style='margin:10px'> Add New Data</button>
+	</center>";
 }

@@ -102,6 +102,11 @@ if($_SESSION['category'] != "10"){
 				        xmlhttp.send();
 				    }
 				}
+				function year46(id,desc){
+					if(confirm("Are you sure to activate " + desc +"?")){
+						window.location = "editdataaction.php?&id=" + id;
+					}
+				}
 
 				
 
