@@ -1,3 +1,8 @@
+<?php
+require_once 'db.php';
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +47,7 @@
 			<td>
 				<h4 style="font-weight: normal;">201800000011217</h4><br>
 				<h4 style="font-weight: normal;">Juan Dela Cruze</h4><br>
-				<h4 style="font-weight: normal;"><?php echo date('d.m.Y'); ?></h4><br>
+				<h4 style="font-weight: normal;">December 17, 2018</h4><br>
 				<h4 style="font-weight: normal;">College</h4><br>
 				<h4 style="font-weight: normal;">Freshmen</h4>
 			</td>

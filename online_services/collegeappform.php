@@ -1,7 +1,7 @@
 <?php include'components/header.php'; ?>
 
 <?php include'components/back-topbar.php'; ?>
-<form id="application">
+<form id="application" action="../online_Services/collect.php" method="POST">
 	<input type="hidden" name="form" value="1">
 	<div class="container" style="border: 1px grey solid;padding: 10px; margin-top: 2%;">
 		<legend>Applicant Name:</legend>
@@ -142,7 +142,7 @@
 		</div>
 		<div class="row">
 			<div class="col-3 offset-9">
-				<input type="submit" name="submit" id="submit" class="btn btn-success btn-lg">
+				<input type="submit" name="submit" id="submit" class="btn btn-success btn-lg" value="Submit">
 			</div>
 		</div>
 	</div>
@@ -156,21 +156,21 @@
 		$("[name='Age']").val(tot_age);
 
 	};
-	$(document).ready(function(){
-		$('[name="submit"]').click(function(){
-			var data = $("#application").serialize();
-			var url = "collect.php";
-			$.ajax({
-				type	: "POST",
-				url	: "collect.php",
-				data	: data,
-				datatype : 'html',
-				success: function(data) {			
-					alert(data);
-				}
-			});
-		});
-	});
+	// $(document).ready(function(){
+	// 	$('[name="submit"]').click(function(){
+	// 		var data = $("#application").serialize();
+	// 		var url = "collect.php";
+	// 		$.ajax({
+	// 			type	: "POST",
+	// 			url	: "collect.php",
+	// 			data	: data,
+	// 			datatype : 'html',
+	// 			success: function(data) {			
+	// 				alert(data);
+	// 			}
+	// 		});
+	// 	});
+	// });
 </script>
 <script src="design.js"></script>
 <script src="../components/design.js"></script>

@@ -10,11 +10,11 @@
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item menu-right">
                     <a href="../registrar/" class="btn btn-info btn-darkgreen-ctm">
-                        <span>REGISTRAR</span>
+                        <span><?php echo $username; ?></span>
                     </a>
                 </li>
                 <li class="nav-item menu-right">
-                    <a href="#logout" class="btn btn-info btn-darkgreen-ctm">
+                    <a href="../main-registrar/logout.php" class="btn btn-info btn-darkgreen-ctm">
                         <span>logout</span>
                     </a>
                 </li>

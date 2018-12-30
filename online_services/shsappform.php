@@ -1,8 +1,9 @@
 <?php include'components/header.php'; ?>
 
 <?php include'components/back-topbar.php'; ?>
-
+<form id="applicationshs" method="POST" action="../online_Services/collect.php">
 <div class="container" style="border: 1px grey solid;padding:10px; margin-top: 2%;">
+	<input type="hidden" name="form" value="2">
 	<legend>Senior High School Application</legend>
 	<div class="row">
 		<div class="col-3">
@@ -35,6 +36,20 @@
 			</div>
 		</div>
 	</div>
+	<div class="row">
+			<div class="col-4">
+				<div class="form-group">
+					<label for="BDate">Date of Birth:</label>
+					<input type="date" id="Bdate" name="Bdate" class="form-control" required="required" autofocus="autofocus" onchange="submitBday()">
+				</div>
+			</div>
+			<div class="col-1">
+				<div class="form-group">
+					<label for="Age">Age:</label>
+					<input type="number" id="age" name="Age" class="form-control" readonly="true" >
+				</div>
+			</div>
+		</div>
 	<legend>Address</legend>
 	<div class="row">
 		<div class="col-3">
