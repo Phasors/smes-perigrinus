@@ -15,10 +15,25 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<script src="assets/js/moment.min.js"></script> <!-- for calendar -->
+	
 	<script src="../assets/js/jquery.min.js"></script>
+	
+	<script src="assets/js/jquery-ui.min.js"></script> <!-- for calendar -->
+	<script src="assets/js/fullcalendar.min.js"></script> <!-- for calendar -->
+	
 	<script src="../assets/js/popper.min.js"></script>
 	<script src="../assets/js/bootstrap.min.js"></script>
+
+	<!-- for calendar -->
+	<link href="assets/css/fullcalendar.min.css" rel="stylesheet" />
+	<link href="assets/css/fullcalendar.print.min.css" rel="stylesheet" media="print" />
+
+	<script src="js/calendar.js"></script>
+
+
 	
+	<!-- custom css -->
 	<link rel="stylesheet" href="main.css">
 	<link rel="stylesheet" href="components/style.css">
 

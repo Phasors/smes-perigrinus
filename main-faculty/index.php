@@ -28,7 +28,7 @@
 				<a href="approval.php"><img src="img/approval-icon.png" class="icon block"></a>
 			</div>
 			<div class="col-sm-2 col">
-				<a href="#sched"><img src="img/sched-icon.png" class="icon block"></a>
+				<a href="schedule.php"><img src="img/sched-icon.png" class="icon block"></a>
 			</div>
 			<div class="col-sm-2 col">
 				<a href="grade.php"><img src="img/grade-icon.png" class="icon block"></a>

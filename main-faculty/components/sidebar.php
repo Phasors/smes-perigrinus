@@ -7,7 +7,7 @@
 			<a href="approval.php">APPROVAL</a>
 		</li>
 		<li>
-			<a href="#schedule">SCHEDULE</a>
+			<a href="schedule.php">SCHEDULE</a>
 		</li>
 		<li>
 			<a href="grade.php">GRADE</a>
