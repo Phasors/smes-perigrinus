@@ -28,9 +28,11 @@
 	<!-- for calendar -->
 	<link href="assets/css/fullcalendar.min.css" rel="stylesheet" />
 	<link href="assets/css/fullcalendar.print.min.css" rel="stylesheet" media="print" />
-
 	<script src="js/calendar.js"></script>
 
+	<!-- for timepicker -->
+	<link rel="stylesheet" href="assets/css/tempusdominus-bs4.css">
+	<script src="assets/js/tempusdominus-bs4.min.js"></script>
 
 	
 	<!-- custom css -->
