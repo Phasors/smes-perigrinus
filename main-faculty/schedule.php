@@ -66,9 +66,9 @@
 						</div>
 						<div class="modal-body">
 							<div class="row">
-									<label class="offset-md-1 col-sm-3">Start Hour</label>
-									<div class="col-sm-6">
-										<div class="input-group date" id="start-hour" data-target-input="nearest">
+								<label class="offset-md-1 col-sm-3">Start Hour</label>
+								<div class="col-sm-6">
+									<div class="input-group date" id="start-hour" data-target-input="nearest">
 										<input type="text" class="form-control datetimepicker-input" data-target="#start-hour"/>
 										<div class="input-group-append" data-target="#start-hour" data-toggle="datetimepicker">
 											<div class="input-group-text"><i class="fa fa-clock-o"></i></div>
@@ -78,14 +78,39 @@
 							</div>
 							<br>
 							<div class="row">
-									<label class="offset-md-1 col-sm-3">End Hour</label>
-									<div class="col-sm-6">
-										<div class="input-group date" id="end-hour" data-target-input="nearest">
+								<label class="offset-md-1 col-sm-3">End Hour</label>
+								<div class="col-sm-6">
+									<div class="input-group date" id="end-hour" data-target-input="nearest">
 										<input type="text" class="form-control datetimepicker-input" data-target="#end-hour"/>
 										<div class="input-group-append" data-target="#end-hour" data-toggle="datetimepicker">
 											<div class="input-group-text"><i class="fa fa-clock-o"></i></div>
 										</div>
 									</div>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<label class="offset-md-1 col-sm-3">Assigned Professor</label>
+								<div class="col-sm-7">
+									<select class="form-control">
+										<option selected>PROF</option>
+										<option>PROF 1</option>
+										<option>PROF 2</option>
+										<option>PROF 3</option>
+										<option>PROF 4</option>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<label class="offset-md-1 col-sm-3">Assigned Room</label>
+								<div class="col-sm-6">
+									<select class="form-control">
+										<option selected>ROOM</option>
+										<option>ROOM 1</option>
+										<option>ROOM 2</option>
+										<option>ROOM 3</option>
+										<option>ROOM 4</option>
+									</select>
 								</div>
 							</div>
 							<br>

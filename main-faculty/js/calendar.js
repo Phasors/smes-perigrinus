@@ -150,11 +150,3 @@
           }
 
         });
-
-// EVENT-LISTING MODAL (OUTSIDE)
-$(document).ready(function(){
-  $(".CSubjects").dblclick(function(){
-    $("#myModal").modal("toggle");
-  });
-});
-
