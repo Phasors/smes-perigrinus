@@ -1,0 +1,69 @@
+SMES V2.4
+
+LIST OF CHANGES:
+program_courses table
+	-removed pre_req,co_req columns
+
+semesters table
+	-renamed right_now to status
+
+academic_year table
+	-renamed right_now to status
+
+courses table
+	-removed program_id, curriculum_id, semester_id, year columns
+
+course_schedules table
+	-change day datatype(varchar to int)
+
+program_curriculum table
+	-removed date_started column
+	-added status column (if curriculum is active in program)
+
+shs_applicants table
+	-added jhs_add column (jhs address)
+
+college_applicants table
+	-added shs_add column (shs address)
+
+student_applicants table
+	-added sex column (male or female)
+	-remove last_school and last_school_add columns
+	-change add_house_no data type (int to varchar)
+
+school_evaluation table
+	-added exam_date column (date of exam)
+	-change evaluator data type (varchar to int)
+	-added foreign key evaluator (from person table)
+
+person table
+	-change perm_house_no and res_house_no datatype (int to varchar)
+
+acad_docu
+	-changed receiver column spelling
+	-added foreign key receiver (from person table)
+	-changed date_receive spelling
+
+cashiering_module
+	-changed courses_paid_for  to course_id
+
+~TABLE ADDITION~
+shs_track_offered
+shs_track_strands
+course_fees
+notifications
+
+DUMMY DATA V1
+
+~DUMMY DATA ADDITION~
+courses table
+program_courses table
+program_curriculum table
+block table
+shs_track_offered
+shs_track_strands
+
+
+
+
+
