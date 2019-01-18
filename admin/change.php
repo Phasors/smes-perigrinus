@@ -1,6 +1,5 @@
 <?php
 include ('connect.php');
-include ('adddata.php');
 $q = intval($_GET['q']);
 
 if($q==1){
@@ -61,10 +60,7 @@ if($q==1){
 	}
 	echo "</tbody>
 	</table>";
-	echo"
-	<center>
-	<button type='button' class='btn btn-success' data-toggle='modal' data-target='#a' style='margin:10px'> Add New Account</button>
-	</center>";
+
 }
 if($q==2){
 	$sql="SELECT * FROM acad_docu ";
@@ -1322,4 +1318,8 @@ if($q==45){
 	</table>";
 
 }
+echo"
+<center>
+<button class='btn btn-success' style='margin:10px'> Add New </> </button>
+</center>";
 ?>

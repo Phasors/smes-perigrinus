@@ -1,5 +1,5 @@
 .contnt{
-	padding: 20px;
+	padding: 55px 30px;
 }
 table {
     border-collapse: collapse;
@@ -15,7 +15,7 @@ thead{
 	color: white;
 }
 thead ,tr ,th { 
-	padding: 10px 0px;
+	padding: 15px 0px;
 	text-align: center;
 }
 tbody tr{
@@ -23,14 +23,11 @@ tbody tr{
 }
 tbody , td {
 	text-align: left;
-	padding: 5px;
+	padding: 10px 15px;
 	border-bottom: 1px solid #228B22;
 	cursor: pointer;
 }
 tbody tr:hover {
 	background-color:#98FB98;
 	color: black;
-}
-.row{
-	margin-bottom: 5px;
 }

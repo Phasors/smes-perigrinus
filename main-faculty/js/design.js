@@ -89,4 +89,13 @@ $(document).ready(function () {
   });
 
 
-  
+  //TIMEPICKER
+$(function () {
+  $('#start-hour').datetimepicker({
+    format: 'LT'
+  });
+
+  $('#end-hour').datetimepicker({
+    format: 'LT'
+  });
+});

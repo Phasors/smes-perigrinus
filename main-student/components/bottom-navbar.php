@@ -29,10 +29,9 @@
 
         <ul class="nav navbar-nav ml-auto">
             <li class="nav-item menu-right">
-                <h4 style="color:white;">Name of Student</h4><br>
+                <h4 style="color:white;"><?php echo $_SESSION['username']?></h4><br>
                 <h6 style="color:white; margin-top: -30px; float: right;">2018-00000-MN-0</h6>
             </li>
         </ul>
     </div>
 </nav>
-

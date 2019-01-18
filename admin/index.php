@@ -1,51 +1,29 @@
 <?php
-if(!isset($_SESSION)){
-	session_start();
-}
-include("connect.php");
-if(!isset($_SESSION['error'])){
-	$_SESSION['error'] = "";
-}
-
-if(isset($_SESSION['username'])){
-	if( $_SESSION['type']== "3"){
-		header("location: dbmgmt.php");
+    if(!isset($_SESSION)){
+        session_start();
+    }
+	include("connect.php");
+	if(!isset($_SESSION['error'])){
+		$_SESSION['error'] = "";
 	}
-	else{
-		header("location: usermgmt.php");
-	}
-}
-
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$username = mysqli_real_escape_string($db, $_POST['username']);
 	$pword = mysqli_real_escape_string($db, $_POST['pword']); 
 
-	$sql = "SELECT * FROM users WHERE username = '$username' AND active=0 ";
+	$sql = "SELECT * FROM users WHERE username = '$username' AND pswrd = '$pword' AND active=0 ";
 	$result = mysqli_query($db, $sql);
 
 	if($row = mysqli_fetch_array($result)){
-		if(password_verify($pword, $row['pswrd'])){
-			if( $row['category']== "7"){
-				$_SESSION['username'] = $row['username'];
-				$_SESSION['category'] = $row['category'];
-				$_SESSION['type'] = $row['type'];
-				if( $_SESSION['type']== "3"){
-					header("location: dbmgmt.php");
-				}
-				else{
-					header("location: usermgmt.php");
-				}
-			}
-			else{
-				$_SESSION['error'] = "Restricted Site";
-			}
+		if( $row['type']== "1"){
+			$_SESSION['username'] = $row['username'];
+			header("location: dbmgmt");
 		}
 		else{
-			$_SESSION['error'] = "Incorrect Password";
-		}
+			$_SESSION['error'] = "Restricted Site";
+		}				
 	}
 	else{
-		$_SESSION['error'] = "Your Login Name is invalid";
+		$_SESSION['error'] = "Your Login Name or Password is invalid";
 	}
 }
 ?>

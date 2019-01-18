@@ -25,16 +25,16 @@
 				<a href="announcement.php"><img src="img/announcement-icon.png" class="icon block"></a>
 			</div>
 			<div class="col-sm-2 col">
-				<a href="approval.php"><img src="img/request-icon.png" class="icon block"></a>
+				<a href="approval.php"><img src="img/approval-icon.png" class="icon block"></a>
 			</div>
 			<div class="col-sm-2 col">
-				<a href="#sched"><img src="img/sched-icon.png" class="icon block"></a>
+				<a href="schedule.php"><img src="img/sched-icon.png" class="icon block"></a>
 			</div>
 			<div class="col-sm-2 col">
 				<a href="grade.php"><img src="img/grade-icon.png" class="icon block"></a>
 			</div>
 			<div class="col-sm-2 col">
-				<a href="class_info.php"><img src="img/record-icon.png" class="icon block"></a>
+				<a href="class_info.php"><img src="img/class-info-icon.png" class="icon block"></a>
 			</div>
 			<div class="col-sm-2 col">
 				<a href="myprofile.php"><img src="img/profile-icon.png" class="icon block"></a>

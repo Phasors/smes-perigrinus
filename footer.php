@@ -45,8 +45,8 @@
 
 				<br><br>
 				<h4>Contact</h4>
-				<p>Phone:</p>
-				<p>Email:</p>
+				<p>Phone: 757-989-5</p>
+				<p>Email: smes_perigrinus@gmail.com</p>
 			</div>
 		</div>
 	</div>

@@ -1,7 +1,9 @@
 
 <?php include 'header.php'; ?>
 
-<?php include 'components/topbar.php'; ?>
+<?php include 'components/topbar.php';
+
+ ?>
 
 <div class="container">
 	<div class="row">
@@ -12,9 +14,8 @@
 		</div>
 		<div class="col-sm-8" style="margin-top: 2%;">
 			<div class="center">
-				<h2 class="welcome">PERIGRINUS SCHOOL</h2>
-				<h3 class="stud-name">Welcome, Name of Student</h3>
-
+				<span class="welcome">PERIGRINUS SCHOOL</span>
+				<span class="stud-name">Welcome, <?php  echo $_SESSION['username'];?></span>
 			</div>
 		</div>
 	</div>
@@ -26,7 +27,7 @@
 				<a href="grade.php"><img src="img/grade-icon.png" class="icon block"></a>
 			</div>
 			<div class="col-sm-2 col-3">
-				<a href="#sched"><img src="img/sched-icon.png" class="icon block"></a>
+				<a href="schedule.php"><img src="img/sched-icon.png" class="icon block"></a>
 			</div>
 			<div class="col-sm-2 col">
 				<a href="#record"><img src="img/record-icon.png" class="icon block"></a>

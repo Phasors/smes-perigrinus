@@ -43,8 +43,5 @@ echo '<table  id="keywords" cellspacing="0" cellpadding="0" width="100%">
 			}
 		echo "</tbody>
 	</table>";
-echo"
-<center>
-<button type='button' class='btn btn-success' data-toggle='modal' data-target='#add' style='margin:10px'> Add New Account</button>
-</center>";
+
 }

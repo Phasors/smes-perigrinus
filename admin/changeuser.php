@@ -2,16 +2,58 @@
 include ('connect.php');
 $q = intval($_GET['q']);
 
-$sql="SELECT * FROM users WHERE category= '$q'";
-$result = mysqli_query($db,$sql);
+if($q==1){
+	$sql="SELECT * FROM users WHERE category=9";
+	$result = mysqli_query($db,$sql);
+}
+if($q==2){
+	$sql="SELECT * FROM users WHERE category=7";
+	$result = mysqli_query($db,$sql);
+}
+if($q==3){
+	$sql="SELECT * FROM users WHERE category=8";
+	$result = mysqli_query($db,$sql);
+}
+if($q==4){
+	$sql="SELECT * FROM users WHERE category=3";
+	$result = mysqli_query($db,$sql);
+}
+if($q==5){
+	$sql="SELECT * FROM users WHERE category=2";
+	$result = mysqli_query($db,$sql);
+}
+if($q==6){
+	$sql="SELECT * FROM users WHERE category=4";
+	$result = mysqli_query($db,$sql);
+}
+if($q==7){
+	$sql="SELECT * FROM users WHERE category=5";
+	$result = mysqli_query($db,$sql);
+}
+if($q==8){
+	$sql="SELECT * FROM users WHERE category=1";
+	$result = mysqli_query($db,$sql);
+}
+if($q==9){
+	$sql="SELECT * FROM users WHERE category=6";
+	$result = mysqli_query($db,$sql);
+}
+if($q==10){
+	$sql="SELECT * FROM users WHERE category=0";
+	$result = mysqli_query($db,$sql);
+}
 echo '<table  id="keywords" cellspacing="0" cellpadding="0" width="100%">
 <thead>
 <tr>
-<th width="">Track No.</th>
-<th width="">Name</th>
+<th width="">User ID</th>
 <th width="">User Name</th>
+<th width="">Category</th>
+<th width="">Permissions</th>
 <th width="">Type</th>
+<th width="">Person_ID</th>
 <th width="">Esign</th>
+<th width="">Esign Pin</th>
+<th width="">Active</th>
 <th width="">Actions</th>
 </tr>
 </thead>
@@ -19,69 +61,37 @@ echo '<table  id="keywords" cellspacing="0" cellpadding="0" width="100%">
 while ($row = mysqli_fetch_array($result))
 {
 	$trackno=$row['user_id'];
-	$person_id= $row['person_id'];
-	$sqla="SELECT `fname`, `mname`, `lname` FROM `person` WHERE person_id= '$person_id'";
-	$resulta = mysqli_query($db,$sqla);
-	$rowa = mysqli_fetch_array($resulta);
-	$fname = $rowa['fname'] ;
-	$mname = $rowa['mname'] ;
-	$lname = $rowa['lname'] ;
-	$name = $fname." ".$mname." ".$lname ;
 	$username=$row['username'];
-	$ty = $row['type'];
-	if( $ty == 0){
-		$type="regular";
-	}
-	elseif($ty == 1){
-		$type="admin";
-	}
-	elseif( $ty == 2){
-		$type="assistant";
-	}
-	elseif($ty == 3){
-		$type="super admin";
-	}
-	else{
-		$type="error";
-	}
+	$category=$row['category'];
+	$permissions = $row['permissions'];
+	$type = $row['type'];
+	$person_id= $row['person_id'];
 	$esign= $row['esign'];
+	$esignpin= $row['esign_pin'];
 	$active = $row['active'];
 
-	echo "<tr>";
-	echo "<td id='trackno$trackno'>$trackno</td>";
-	echo "<td id='name$trackno'>$name</td>";
-	echo "<td id='username$trackno'>$username</td>";
-	echo "<td id='type$trackno'>$type</td>";
-	echo "<td id='esign$trackno' > <img src='$esign' style='width:50px;height:50px;'></td>";
-	if($active==0){
-		echo "<td>
-		<button type='button' class='btn btn-info' data-toggle='modal' data-target='#edit' onclick='editAcc(".$trackno.")'  style='width:30%'>Edit</button>
-		<button type='button' class='btn btn-warning' onclick='reset(\"".$name."\",".$trackno.")' style='width:30%'>RP</button>
-		<button type='button' class='btn btn-danger' onclick='deactivate(\"".$name."\",".$trackno.")' style='width:30%'>DE</button>";
-	} 
-	else{
-		echo "<td>
-		<button type='button' class='btn btn-info' data-toggle='modal' data-target='#edit' onclick='editAcc(".$trackno.")' style='width:30%'>Edit</button>
-		<button type='button' class='btn btn-warning' onclick='reset(\"".$name."\",".$trackno.")' style='width:30%'>RP</button>
-		<button type='button' class='btn btn-success' onclick='activate(\"".$name."\",".$trackno.")' style='width:30%'>AC</button>";
-	}
-	echo "</td>";
+	echo "<tr user_id='$trackno'>";
+	echo "<td>$trackno</td>";
+	echo "<td>$username</td>";
+	echo "<td>$category</td>";
+	echo "<td>$permissions</td>";
+	echo "<td>$type</td>";
+	echo "<td>$person_id</td>";
+	echo "<td>$esign</td>";
+	echo "<td>$esignpin</td>";
+	echo "<td>$active</td>";
+	echo "<td>
+	<button type='button' class='btn btn-info' data-toggle='modal' data-target='#edit' style='width:48%'>Edit</button>
+	<button type='button' class='btn btn-info' style='width:48%'>RP</button>
+	</td>";
 	echo "</tr> ";
+
 }
 echo "</tbody>
 </table>";
-if (isset($category)){
-	echo"
-	<center>
-	<button type='button' class='btn btn-success' data-toggle='modal' onclick='addAcc(\".$category.\")' data-target='#add' style='margin:10px'> Add New Account</button>
-	</center>";
-}
-else{
-	echo"
-	<center>
-	<button type='button' class='btn btn-success' data-toggle='modal' data-target='#add' style='margin:10px'> Add New Account</button>
-	</center>";
-}
-
+echo"
+<center>
+				<button type='button' class='btn btn-success' data-toggle='modal' data-target='#add' style='margin:10px'> Add New Account</button>
+			</center>";
 ?>
 
