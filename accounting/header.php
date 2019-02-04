@@ -46,9 +46,9 @@ $acc->check_sess();
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="users"></span>
-                  Professors
+                <a class="nav-link" href="content.php">
+                  <span data-feather="file-text"></span>
+                  Content
                 </a>
               </li>
               <li class="nav-item">
@@ -58,15 +58,21 @@ $acc->check_sess();
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="cashiering.php">
-                  <span data-feather="file-text"></span>
-                  Cashiering
+                <a class="nav-link" href="#">
+                  <span data-feather="users"></span>
+                  Professors
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="content.php">
+                <a class="nav-link" href="#">
+                  <span data-feather="users"></span>
+                  Employees
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cashiering.php">
                   <span data-feather="file-text"></span>
-                  Content
+                  Journal
                 </a>
               </li>
               <li class="nav-item">
@@ -102,3 +108,4 @@ $acc->check_sess();
 			</div>
 		</div>
 		<?php endif ?>
+<main role="main" class="col-md-9 ml-md-auto col-lg-10 pt-3 px-4">
