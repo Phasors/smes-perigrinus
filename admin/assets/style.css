@@ -1,36 +1,13 @@
 .contnt{
 	padding: 20px;
 }
-table {
-    border-collapse: collapse;
-	margin: 0 auto;
-	border: 3px solid #228B22;
-	border-radius: 5px;
+.icon{
+	height: 30px;
+	width: 30px;
 }
-
-thead{
-	cursor: pointer;
-	background: #228B22;
-	font-weight: bold;
-	color: white;
-}
-thead ,tr ,th { 
-	padding: 10px 0px;
-	text-align: center;
-}
-tbody tr{
-	background-color: white;
-}
-tbody , td {
-	text-align: left;
-	padding: 5px;
-	border-bottom: 1px solid #228B22;
-	cursor: pointer;
-}
-tbody tr:hover {
-	background-color:#98FB98;
-	color: black;
-}
-.row{
+input{
+	margin-top:5px;
 	margin-bottom: 5px;
 }
+#example tr:nth-child(even) {background-color: #f2f2f2;}
+#keywords tr:nth-child(even) {background-color: #f2f2f2;}
