@@ -1,5 +1,7 @@
 <?php
 include ('connect.php');
+include ("session.php");
+
 
 $action = $_GET["action"];
 if ($db->connect_error) {

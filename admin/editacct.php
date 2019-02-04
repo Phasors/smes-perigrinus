@@ -2,6 +2,7 @@
 include("connect.php");
 include("includes.php");
 include('session.php');    // check connection
+
 if ($db->connect_error) {
   die("Connection failed: " . $db->connect_error);
 } 

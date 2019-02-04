@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       $username = mysqli_real_escape_string($db, $_POST['UName']);
       $category = mysqli_real_escape_string($db, $_POST['Category']);
       $type = mysqli_real_escape_string($db, $_POST['Type']);
-      $esign_pin = 0000;
+      $esign_pin = mysqli_real_escape_string($db, $_POST['esign_pin']);
 
       $target_path = "D:/xampp/htdocs/admin/Pictures/"; 
       $target_path = $target_path.basename( $_FILES['fileToUpload']['name']); 
@@ -48,16 +48,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
      } 
      //learn to email the geneated password -- can auto generate
      //$pword = password_generate(16);
-     $pword = "12345";
+     $pword = mysqli_real_escape_string($db, $_POST['password']);
      $pswrd = password_hash($pword, PASSWORD_DEFAULT);
+     $pin = mysqli_real_escape_string($db, $_POST['pincode']);
+     $pin_code = password_hash($pin, PASSWORD_DEFAULT);
 
      $sqla = "SELECT person_id FROM person WHERE fname='$fname' AND mname='$mname' AND lname='$lname' AND contact_no='$contact_no'";
      $querya = mysqli_query($db,$sqla);
      $rowa= mysqli_fetch_array($querya);
      $person_id = $rowa['person_id'];
-     $sqlb= "INSERT INTO `users`( `person_id`, `username`, `category`, `type`, `esign`, `esign_pin`,`pswrd`,`active`) 
+     $sqlb= "INSERT INTO `users`( `person_id`, `username`, `category`, `type`, `esign`, `esign_pin`,`pswrd`,`pin_code`,`active`) 
      VALUES
-     ('$person_id', '$username', '$category',  '$type', '$esign', '$esign_pin','$pswrd',0)";
+     ('$person_id', '$username', '$category',  '$type', '$esign', '$esign_pin','$pswrd','$pin_code',0)";
      if (mysqli_query($db, $sqlb)) {
       $result = "Record updated successfully";
     }

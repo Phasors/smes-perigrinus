@@ -1,5 +1,7 @@
 <?php
 include ('connect.php');
+include ("session.php");
+
 $q = intval($_GET['q']);
 
 $sql="SELECT * FROM users WHERE category= '$q'";
@@ -55,17 +57,17 @@ while ($row = mysqli_fetch_array($result))
 	echo "<td id='esign$trackno' > <img src='$esign' style='width:50px;height:50px;'></td>";
 	if($active==0){
 		echo "<td class='text-center'>
-		<button type='button' class='btn btn-info' data-toggle='modal' data-target='#edit' onclick='editAcc(".$trackno.")'  style='width:20%'>Edit</button>
-		<button type='button' class='btn btn-info' data-toggle='modal' data-target='#cp'  onclick='cp(".$trackno.")'style='width:20%'>CP</button>
-		<button type='button' class='btn btn-warning' onclick='reset(\"".$name."\",".$trackno.")' style='width:20%'>RP</button>
-		<button type='button' class='btn btn-danger' onclick='deactivate(\"".$name."\",".$trackno.")' style='width:20%'>DE</button>";
+		<button type='button' class='form-control icon' data-toggle='modal' data-target='#edit' onclick='editAcc(".$trackno.")' ><i class='fa fa-edit'></i></button>
+		<button type='button' class='form-control icon' data-toggle='modal' data-target='#cp'  onclick='cp(".$trackno.")'><i class='fa fa-file-image'></i></button>
+		<button type='button' class='form-control icon' onclick='reset(\"".$name."\",".$trackno.")'><i class='fa fa-history'></i></button>
+		<button type='button' style='color:red' class='form-control icon' onclick='deactivate(\"".$name."\",".$trackno.")' ><i class='fa fa-lock'></i></button>";
 	} 
 	else{
 		echo "<td class='text-center'>
-		<button type='button' class='btn btn-info' data-toggle='modal' data-target='#edit' onclick='editAcc(".$trackno.")' style='width:20%'>Edit</button>
-		<button type='button' class='btn btn-info' data-toggle='modal' data-target='#cp'  style='width:20%'>CP</button>
-		<button type='button' class='btn btn-warning' onclick='reset(\"".$name."\",".$trackno.")' style='width:20%'>RP</button>
-		<button type='button' class='btn btn-success' onclick='activate(\"".$name."\",".$trackno.")' style='width:20%'>AC</button>";
+		<button type='button' class='form-control icon' data-toggle='modal' data-target='#edit' onclick='editAcc(".$trackno.")' ><i class='fa fa-edit'></i></button>
+		<button type='button' class='form-control icon' data-toggle='modal' data-target='#cp'  > <i class='fa fa-file-image'></i></button>
+		<button type='button' class='form-control icon' onclick='reset(\"".$name."\",".$trackno.")' ><i class='fa fa-history'></i></button>
+		<button type='button' style='color:green' class='form-control icon' onclick='activate(\"".$name."\",".$trackno.")' ><i class='fa fa-lock-open'></i></button>";
 	}
 	echo "</td>";
 	echo "</tr> ";

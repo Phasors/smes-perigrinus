@@ -44,6 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/form-elements.css">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/fontawesome-free/css/all.min.css">
 </head>
 <body>
 	<div class="top-content">

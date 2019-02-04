@@ -1,5 +1,6 @@
 <?php
-include 'connect.php';
+include ('connect.php');
+include ("session.php");
 
 $prov1 = $_SESSION["prov1"];
 $town1 = $_SESSION["town1"];
