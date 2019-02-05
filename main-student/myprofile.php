@@ -9,7 +9,9 @@
 		<?php include 'components/topbar.php'; ?>
 		
 		<div id="content-body">
-			<?php include 'myprofile/nav-pills.php'; ?>
+			<div class="container">
+				<?php include 'myprofile/nav-pills.php'; ?>
+			</div>
 			<div class="tab-content" id="pills-tabContent">
 				<div class="tab-pane fade show active" id="nav-personal" role="tabpanel" aria-labelledby="nav-personal-tab">
 					<?php include 'myprofile/personal_data.php'; ?>

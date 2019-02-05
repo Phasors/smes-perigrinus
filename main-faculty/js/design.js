@@ -23,13 +23,13 @@
 // });
 
 
+// image-upload
 $(document).ready(function(){
 	$("#form9").on("change",function(e){
 		var filename = e.target.value.split('\\').pop();
 		$("#label-span").text(filename);
 	});
 });
-
 
 
 
@@ -40,62 +40,71 @@ $(document).ready(function () {
 });
 
 
-  $(document).ready(function(){
+// myprofile.php
+$(document).ready(function(){
 
-    $("#other_nation").hide();
+  $("#other_nation").hide();
 
-    $("#nationality").change(function(){
-      if($(this).val()=="others")
-      {    
-        $("#other_nation").show();
-      }
-      else
-      {
-        $("#other_nation").hide();
-      }
-    });
-  });
-
-  $(document).ready(function(){
-
-    $("#other_nation_father").hide();
-
-    $("#nationality_father").change(function(){
-      if($(this).val()=="others")
-      {    
-        $("#other_nation_father").show();
-      }
-      else
-      {
-        $("#other_nation_father").hide();
-      }
-    });
-  });
-
-  $(document).ready(function(){
-
-    $("#other_nation_mother").hide();
-
-    $("#nationality_mother").change(function(){
-      if($(this).val()=="others")
-      {    
-        $("#other_nation_mother").show();
-      }
-      else
-      {
-        $("#other_nation_mother").hide();
-      }
-    });
-  });
-
-
-  //TIMEPICKER
-$(function () {
-  $('#start-hour').datetimepicker({
-    format: 'LT'
-  });
-
-  $('#end-hour').datetimepicker({
-    format: 'LT'
+  $("#nationality").change(function(){
+    if($(this).val()=="others")
+    {    
+      $("#other_nation").show();
+    }
+    else
+    {
+      $("#other_nation").hide();
+    }
   });
 });
+
+$(document).ready(function(){
+
+  $("#other_nation_father").hide();
+
+  $("#nationality_father").change(function(){
+    if($(this).val()=="others")
+    {    
+      $("#other_nation_father").show();
+    }
+    else
+    {
+      $("#other_nation_father").hide();
+    }
+  });
+});
+
+$(document).ready(function(){
+
+  $("#other_nation_mother").hide();
+
+  $("#nationality_mother").change(function(){
+    if($(this).val()=="others")
+    {    
+      $("#other_nation_mother").show();
+    }
+    else
+    {
+      $("#other_nation_mother").hide();
+    }
+  });
+});
+
+
+  //TIMEPICKER-schedule.php
+  $(function () {
+    $('#start-hour').datetimepicker({
+      format: 'LT'
+    });
+
+    $('#end-hour').datetimepicker({
+      format: 'LT'
+    });
+  });
+
+
+  // date of birth -myprofile
+  $(function () {
+    $('#datetimepicker4').datetimepicker({
+      format: 'L'
+    });
+  });

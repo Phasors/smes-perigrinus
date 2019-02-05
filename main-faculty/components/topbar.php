@@ -7,8 +7,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item menu-right">
-                    <a href="../main-fa-test/" class="btn btn-info btn-darkgreen-ctm">
+                    <a href="../main-faculty" class="btn btn-info btn-darkgreen-ctm">
                         <span>HOME</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-right">
+                    <a href="notification.php" class="btn btn-info btn-darkgreen-ctm">
+                         <i class="fa fa-bell"></i> 
+                        <span class="badge badge-warning">2</span>
                     </a>
                 </li>
                 <li class="nav-item menu-right">
@@ -30,11 +36,22 @@
     </div>
 </div>
 
+
 <div class="logout">
     <div class="logouttool">
         <a href="#logout" class="btn btn-success">
             <i class="fa fa-sign-out"></i>
         </a>
         <span class="log-tooltiptext">LOGOUT</span>
+    </div>
+</div>
+
+<div class="notifbell">
+    <div class="notifbelltool">
+        <a href="notification.php" class="btn btn-success">
+            <i class="fa fa-bell"></i> 
+            <span class="badge badge-warning">2</span>
+        </a>
+        <span class="notifbell-tooltiptext">NOTIFICATION</span>
     </div>
 </div>

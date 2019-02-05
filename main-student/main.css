@@ -204,3 +204,11 @@ th{
 .radio-inline{
     margin-right: 20px !important;
 }
+
+
+/*------------- APPROVAL ----------- */
+.approval-remove-view{
+    border-radius: 50%;
+    margin-right: 2%;
+    margin-bottom: 2%; 
+}

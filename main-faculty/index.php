@@ -24,11 +24,14 @@
 			<div class="col-sm-2 col">
 				<a href="announcement.php"><img src="img/announcement-icon.png" class="icon block"></a>
 			</div>
-			<div class="col-sm-2 col">
+			<!-- <div class="col-sm-2 col">
 				<a href="approval.php"><img src="img/approval-icon.png" class="icon block"></a>
-			</div>
+			</div> -->
 			<div class="col-sm-2 col">
 				<a href="schedule.php"><img src="img/sched-icon.png" class="icon block"></a>
+			</div>
+			<div class="col-sm-2 col">
+				<a href="mycalendar.php"><img src="img/mycalendar-icon.png" class="icon block"></a>
 			</div>
 			<div class="col-sm-2 col">
 				<a href="grade.php"><img src="img/grade-icon.png" class="icon block"></a>

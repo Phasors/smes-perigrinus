@@ -6,8 +6,9 @@
             <ul class="nav navbar-nav d-block mx-auto">
 
                 <a href="announcement.php"><img src="img/announcement-icon.png" class="icon-navbar-btm block-navbar-btm"></a>
-                <a href="approval.php"><img src="img/approval-icon.png" class="icon-navbar-btm block-navbar-btm"></a>
+                <!-- <a href="approval.php"><img src="img/approval-icon.png" class="icon-navbar-btm block-navbar-btm"></a> -->
                 <a href="schedule.php"><img src="img/sched-icon.png" class="icon-navbar-btm block-navbar-btm"></a>
+                <a href="myCalendar.php"><img src="img/mycalendar-icon.png" class="icon-navbar-btm block-navbar-btm"></a>
                 <a href="grade.php"><img src="img/grade-icon.png" class="icon-navbar-btm block-navbar-btm"></a>
                 <a href="class_info.php"><img src="img/class-info-icon.png" class="icon-navbar-btm block-navbar-btm"></a>
                 <a href="myprofile.php"><img src="img/profile-icon.png" class="icon-navbar-btm block-navbar-btm"></a>
