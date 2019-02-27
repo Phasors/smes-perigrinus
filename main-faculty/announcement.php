@@ -1,5 +1,6 @@
 <?php include 'header.php'; ?>
 
+<body>
 <div class="wrapper">
 	
 	<?php include 'components/sidebar.php'; ?>
@@ -21,36 +22,40 @@
 										<th width="30%">Title</th>
 										<th width="20%">Author</th>
 										<th width="30%">Message</th>
+										<th></th>
 									</tr>
 								</thead>
-								<!-- <?php
-								//$conn = mysqli_connect("localhost", "root", "", "smes");
-								//if ($conn-> connect_error){
-								//	die("Connection failed:". $conn-> connect_error);
-								//}
-
-								//$sql = "SELECT title, content, announcer, announcer_position FROM ANNOUNCEMENTS";
-								//$result = $conn-> query($sql);
-
-								//if ($result->  num_rows > 0) {
-								//	while ($row = $result-> fetch_assoc()) {
-								//		echo "<tr><td>". $row["title"]."</td><td>". $row["content"]."</td><td>". $row["announcer"]."</td><td>". $row["announcer_position"]."</td></tr>";
-								//	}
-								//	echo "</table>";
-								// }
-								//else {
-								//	echo "0 result";
-								// }
-								?> -->
 								<tbody>
+								</tbody>
+							</table>
+							<!-- ?php
+								$conn = mysqli_connect("localhost", "root", "", "smes");
+								if ($conn-> connect_error){
+									die("Connection failed:". $conn-> connect_error);
+								}
+
+								$sql = "SELECT title, content, date_start, announcer, announcer_position FROM announcements";
+								$result = $conn-> query($sql);
+
+								if ($result-> num_rows > 0) {
+									while ($row = $result-> fetch_assoc()) {
+								?>
+
 									<tr>
 										<td>December 3, 2018</td>
 										<td><a href="#">Event</a></td>
 										<td>Author</td>
 										<td>Event Details</td>
 									</tr>
-								</tbody>
-							</table>
+
+										echo "<tr><td>". $row["title"]."</td><td>". $row["content"]."</td><td>". $row["announcer"]."</td><td>". $row["announcer_position"]."</td></tr>";
+								-->		
+								<!-- ?php	}
+								}
+								else {
+									echo "0 result";
+								}
+								? -->
 						</div>
 					</div>
 				</div>
@@ -62,6 +67,27 @@
 	</div> <!-- content --> 
 </div> <!-- wrapper -->
 
+</body>
+
 <?php include 'footer.php'; ?>
 
 
+<script>
+
+	$(document).ready(function() {
+		viewData();
+
+
+	});
+
+	function viewData() {
+		$.ajax({
+			type: "GET",
+			url: "server.php?page=view",
+			success: function(data) {
+				$('tbody').html(data);
+			}
+		});
+	}
+
+</script>
