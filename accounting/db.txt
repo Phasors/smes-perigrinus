@@ -1,9 +1,0 @@
-1. Delete na yung course fees at misc fees tas gawa ng isang table ng fees
-columns: fee_id, fee_type, price.
-For cms kasi ng accounting ito
-
-2. Add table for enrollment transactions
-columns: transact no., person_id, curriculum_id, program_id, semester, official_receipt_no, official_receipt_date, amount_paid, course_id;
-
-eto lang muna
-

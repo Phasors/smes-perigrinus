@@ -1,9 +1,4 @@
 <?php
-require_once 'Connection.php';
-$servername = "localhost";
-$username ="kylehipz";
-$password ="kylehipz";
-$dbname = "SMES";
+    require_once 'Connection.php';
 
-$acc = new Connection($servername, $username, $password, $dbname);
-?>
+    $acc = new Connection("localhost", "kylehipz", "kylehipz", "SMES");

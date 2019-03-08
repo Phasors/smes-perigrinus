@@ -1,3 +1,0 @@
-added fees table
-delete course_fee and misc table
-added transact_type to cashiering module
