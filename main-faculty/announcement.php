@@ -23,10 +23,29 @@
 										<th width="30%">Message</th>
 									</tr>
 								</thead>
+								<!-- <?php
+								//$conn = mysqli_connect("localhost", "root", "", "smes");
+								//if ($conn-> connect_error){
+								//	die("Connection failed:". $conn-> connect_error);
+								//}
+
+								//$sql = "SELECT title, content, announcer, announcer_position FROM ANNOUNCEMENTS";
+								//$result = $conn-> query($sql);
+
+								//if ($result->  num_rows > 0) {
+								//	while ($row = $result-> fetch_assoc()) {
+								//		echo "<tr><td>". $row["title"]."</td><td>". $row["content"]."</td><td>". $row["announcer"]."</td><td>". $row["announcer_position"]."</td></tr>";
+								//	}
+								//	echo "</table>";
+								// }
+								//else {
+								//	echo "0 result";
+								// }
+								?> -->
 								<tbody>
 									<tr>
 										<td>December 3, 2018</td>
-										<td>Event</td>
+										<td><a href="#">Event</a></td>
 										<td>Author</td>
 										<td>Event Details</td>
 									</tr>

@@ -1,11 +1,11 @@
 <nav id="sidebar">
 	<ul class="list-unstyled components">
 		<li>
-			<a href="announce.php"><i class="material-icons">&#xe7f4;</i> ANNOUNCEMENT</a>
+			<a href="announcement.php"><i class="material-icons">&#xe7f4;</i> ANNOUNCEMENT</a>
 		</li>
-		<li>
+		<!-- <li>
 			<a href="approval.php"><i class="fa fa-check-square-o"></i> APPROVAL</a>
-		</li>
+		</li> -->
 		<li>
 			<a href="schedule.php"><i class="fa fa-calendar"></i> SCHEDULE</a>
 		</li>

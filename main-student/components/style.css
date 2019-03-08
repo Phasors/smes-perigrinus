@@ -215,6 +215,14 @@ footer{
 
 
 /* -------- HOME and LOGOUT -------- */
+
+.notifbell{
+    position: fixed; 
+    top:50px !important; 
+    left:3px;
+    display: block;
+    z-index: 100 !important;
+}
 .home{
     position: fixed; 
     top:3px; 
@@ -234,10 +242,13 @@ footer{
     .logout{
         display:none;
     }
+    .notifbell{
+        display:none;
+    }
     #content{
         margin-top: 0px;
     }
-    
+
 }
 
 
@@ -333,3 +344,51 @@ footer{
 .hometool:hover .home-tooltiptext {
   visibility: visible;
 }
+
+
+/*---------- FOR NOTIFICATION TOOLTIP -------*/
+.notifbelltool {
+  position: relative;
+  display: inline-block;
+
+}
+.notifbelltool .notifbell-tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #00570a;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  
+  position: absolute;
+  top: 2px;
+  left: 110%;  
+  z-index: 1;
+}
+
+.notifbelltool .notifbell-tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; 
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #00570a transparent transparent;
+}
+
+.notifbelltool .notifbell-tooltiptext {
+  opacity: 0;
+  transition: opacity .4s;
+}
+
+.notifbelltool:hover .notifbell-tooltiptext {
+  opacity: 1;
+}
+
+.notifbelltool:hover .notifbell-tooltiptext {
+  visibility: visible;
+}
+

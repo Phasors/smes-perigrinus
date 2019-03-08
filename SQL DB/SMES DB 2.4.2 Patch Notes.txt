@@ -1,0 +1,36 @@
+2.4.2 CHANGES:
+
+~Removed course_fees and misc_fees tables
+~Added fees table (Req by Hipz)
+~Added enrollment_transactions table (Req by Hipz)
+~Added rooms table (Req by Casilla)
+
+*course_schedules table
+~Change room to room_id (foreign key from rooms table)
+
+*k12_subjects_schedules
+~change room to room_id (foreign key from rooms table)
+
+~k12_sections
+~change room to room_id (foreign key from rooms table)
+
+*k12_subjects table
+~Added subject_code column in k12_subjects table
+~Added shs_track_id column in k12_subjects table
+
+*announcements table
+~Added recipient_type column in announcements table (Req by Jasmin)
+
+*student_applicants table
+~Added id_pic column in student_applicants table (req by ryan)
+
+*curriculum table
+~removed creator column
+~added status column (0-disapproved, 1-pending, 2- approved)
+
+*PERSON TABLE
+~Added birthplace column in person table
+~Added nationality column in person table
+~Added religion column in person table
+~change civil_status column variable from varchar to int(0=single, 1=taken, etc)
+~change sex column variable from varchar to int (0=male, 1=female)

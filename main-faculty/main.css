@@ -272,7 +272,16 @@ th{
 #calendar-container {
   position: relative;
   z-index: 1;
-  left: 100px;
+}
+
+
+#calendar-container-stud {
+  position: relative;
+  z-index: 1;
+}
+
+.mycalendar {
+  left: 200px !important;
 }
 
 #calendar {
@@ -302,4 +311,13 @@ th{
 
 .fc-scroller{
     overflow-y: hidden !important;
+}
+
+
+
+/*------------- APPROVAL ----------- */
+.approval-remove-view{
+    border-radius: 50%;
+    margin-right: 2%;
+    margin-bottom: 2%; 
 }
