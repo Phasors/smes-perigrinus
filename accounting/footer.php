@@ -1,28 +1,34 @@
 
-      </div>
-    </div>
-    <!-- /#page-content-wrapper -->
 
-  </div>
-  </div>
-  <!-- /#wrapper -->
+		</div>
+    <script src="vendors/jquery/dist/jquery-3.3.1.min.js"></script>
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+	<script src="vendors/jquery-ui/jquery-ui.js" charset="utf-8"></script>
+		<!-- <script src="assets/js/main.js"></script> -->
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/popper.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/datatables/jquery.dataTables.min.js"></script>
-  <script src="assets/datatables/dataTables.bootstrap4.min.js" charset="utf-8"></script>
-  <script src="assets/datatables/dataTables.buttons.min.js" charset="utf-8"></script>
-  <script src="assets/datatables/jszip.min.js" charset="utf-8"></script>
-  <script src="assets/datatables/pdfmake.min.js" charset="utf-8"></script>
-  <script src="assets/datatables/vfs_fonts.js" charset="utf-8"></script>
-  <script src="assets/datatables/buttons.html5.min.js" charset="utf-8"></script>
+		<script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="vendors/jszip/dist/jszip.min.js"></script>
+    <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="assets/js/init-scripts/data-table/datatables-init.js"></script>
 
-  <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
+    <script src="vendors/chart.js/dist/Chart.bundle.min.js"></script>
+    <!-- <script src="assets/js/dashboard.js"></script> -->
+    <!-- <script src="assets/js/widgets.js"></script> -->
+    <script src="vendors/jqvmap/dist/jquery.vmap.min.js"></script>
+    <script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+	<script>
+	$('#menuToggle').on('click', function(event) {
+		$('body').toggleClass('open');
+	});
+
+	</script>

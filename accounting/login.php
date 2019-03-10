@@ -6,11 +6,10 @@
         $acc->authenticate($_POST['username'], $_POST['pswrd']);
 ?>
 
-<link href="assets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link rel="stylesheet" href="css/login.css">
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/jquery-3.3.1.min.js"></script>
-<script type="assets/js/popper.min.js"></script>
+<link rel="stylesheet" href="assets/css/login.css">
+<link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+<script src="vendors/jquery/dist/jquery-3.3.1.min.js"></script>
+<script type="vendors/popper.js/dist/popper.min.js"></script>
 <!-- ---- Include the above in your HEAD tag -------- -->
 
 <div class="sidenav">
@@ -25,11 +24,11 @@
        <form method="post">
           <div class="form-group">
              <label>User Name</label>
-             <input type="text" name="username" class="form-control" placeholder="User Name">
+             <input type="text" name="username" class="form-control" placeholder="User Name" required>
           </div>
           <div class="form-group">
              <label>Password</label>
-             <input type="password" name="pswrd" class="form-control" placeholder="Password">
+             <input type="password" name="pswrd" class="form-control" placeholder="Password" required>
           </div>
           <button type="submit" class="btn btn-black">Login</button>
           <button type="submit" class="btn btn-secondary">Register</button>
