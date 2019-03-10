@@ -1,7 +1,9 @@
 <?php
     include('db.php');
 
-    if(isset($_POST['section'])) {
+    if(isset($_POST['section'])&&isset($_POST['grade_level'])) {
+
+        $grade_level = $_POST['grade_level'];
         $section = $_POST['section'];
 
         $result = $db->query("SELECT S.k12_stdnt_info_id, S.person_id, 
@@ -10,7 +12,8 @@
                                 FROM k12_student_info as S
                                 INNER JOIN person as P
                                 ON S.person_id = P.person_id
-                                WHERE k12_section_id=$section
+                                WHERE grade_level_id = $grade_level
+                                AND k12_section_id=$section
                                 ORDER BY P.lname ASC");
 
         while($row = $result->fetch_assoc()) {
@@ -20,6 +23,28 @@
             </tr>
             <?php
             
+        }
+    }
+
+    else if(isset($_POST['grade_level'])) {
+        $grade_level = $_POST['grade_level'];
+        $result = $db->query("SELECT * FROM k12_sections as K
+                                INNER JOIN academic_year as Y
+                                    ON K.ay_id = Y.ay_id
+                                INNER JOIN grade_levels as G
+                                    ON K.grade_level_id = G.grade_level_id
+                                WHERE K.grade_level_id = $grade_level
+                                AND Y.status = 1");
+        ?>
+            <option value="0" selected hidden>Section</option>
+        <?php
+
+        while($row = $result->fetch_assoc()) {
+            ?>
+                <option value="<?php echo $row['k12_section_id'] ?>">
+                    <?php echo "Section - ".$row['section_no'] ?>
+                </option>
+            <?php
         }
     }
 ?>

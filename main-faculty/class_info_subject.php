@@ -96,7 +96,7 @@
 		$('#college').change(function() {
 			var college = $(this).val();
 			
-			$.post("blockSer.php",
+			$.post("subjSer.php",
 			{college: college},
 			function(data, status) {
 				$('#program').html(data);
@@ -107,7 +107,7 @@
 		$('#program').change(function() {
 			var program = $(this).val();
 			
-			$.post("blockSer.php",
+			$.post("subjSer.php",
 			{program: program},
 			function(data, status) {
 				$('#year_level').html(data);
@@ -118,7 +118,7 @@
 		$('#year_level').change(function() {
 			var year_level = $(this).val();
 			
-			$.post("blockSer.php",
+			$.post("subjSer.php",
 			{year_level: year_level},
 			function(data, status) {
 				$('#section').html(data);
@@ -134,7 +134,7 @@
 
 			//alert("College - " + college);
 			
-			$.post("blockSer.php",
+			$.post("subjSer.php",
 			{
 				col: college,
 				prog: program,

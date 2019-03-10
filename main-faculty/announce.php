@@ -1,16 +1,17 @@
 <?php
-
+    session_start();
     include('db.php');
 
         $date = $_POST['an_date'];
         $title = $_POST['an_title'];
-        $author = $_POST['an_author'];
         $message = $_POST['an_msg'];
         $message = $_POST['an_msg'];
         $category = $_POST['category'];
 
+        $author = $_SESSION['id'];
+
         $ayear = $db->query("SELECT * FROM academic_year
-                                WHERE ay_status = 1"); 
+                                WHERE status = 1"); 
 
         if($row = $ayear->fetch_assoc()){
             $pyear = $row['ay_id'];
@@ -24,7 +25,7 @@
         }
 
 
-        $res = $db->query("INSERT INTO announcements (ay_id, semester_id, recipient_category, title, content, date_start, announcer)
+        $res = $db->query("INSERT INTO announcements (ay_id, semester_id, recipient_category, title, content, date_start, person_id)
                             VALUES ('$pyear', '$psem', '$category', '$title', '$message', '$date', '$author')");
 
         if($res) {

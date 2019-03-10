@@ -116,10 +116,14 @@
 			});
 		});
 		$('#year_level').change(function() {
+			var program = $('#program').val();
 			var year_level = $(this).val();
 			
 			$.post("blockSer.php",
-			{year_level: year_level},
+			{
+				year_level: year_level,
+				program: program
+			},
 			function(data, status) {
 				$('#section').html(data);
 				//alert(year_level);

@@ -13,38 +13,22 @@
 			<div class="container">
 				<form>
 					<div class="row">
-						<!--div class="col-sm-2 col">
-							<select id="sem_select" name="cd-dropdown" class="form-control">
-								<option selected hidden>Academic Year</option>
-							<!?php
-								$res = $db->query("SELECT * FROM academic_year WHERE ay_status = 1");
-								while($row = $res->fetch_assoc()) {
-							?>
-								<option value="<!?php $row['ay_id']?>"><!?php echo $row['ay_desc'] ?></option>
-							<!?php
-								}
-							?>
-							</select>
-						</div-->
-						<div class="col-sm-4 col">
-							<select id="seuction" class="form-control sec">
-								<option value="0" selected hidden>Grade and Section</option>
-							<?php
-								$res = $db->query("SELECT * FROM k12_sections as K
-													INNER JOIN academic_year as Y
-														ON K.ay_id = Y.ay_id
-													INNER JOIN grade_levels as G
-														ON K.grade_level_id = G.grade_level_id
-													WHERE Y.ay_status = 1");
-								while($row = $res->fetch_assoc()) {
-							?>
-								<option value="<?php echo $row['k12_section_id'] ?>"><?php echo "Grade ".$row['grade_level_id'].
-												", Section ".$row['section_no'] ?></option>
-							<?php
-								}
-							?>
-							</select>
-						</div>
+						<select id="grade_level" class="form-control col-sm-4 col">
+							<option value="0" selected hidden>Grade Level</option>
+						<?php
+							$res = $db->query("SELECT * FROM grade_levels");
+							while($row = $res->fetch_assoc()) {
+						?>
+							<option value="<?php echo $row['grade_level_id'] ?>">
+								<?php echo $row['grade_desc']." - ".$row['grade_level']?>
+							</option>
+						<?php
+							}
+						?>
+						</select>
+						<select name="" id="seuction" class="form-control col-sm-4 col">
+							<option value="0" selected hidden>Section</option>
+						</select>
 					</div>
 
 					<br>
@@ -83,11 +67,26 @@
 
 <script>
 	$(document).ready(function() {
+		$('#grade_level').change(function() {
+			var grade_level = $(this).val();
+			
+			$.post("classSer.php",
+			{grade_level: grade_level},
+			function(data, status) {
+				$('#seuction').html(data);
+				//alert(section);
+				console.log(data);
+			});
+		});
 		$('#seuction').change(function() {
+			var grade_level = $('#grade_level').val();
 			var section = $(this).val();
 			
 			$.post("classSer.php",
-			{section: section},
+			{
+				section: section,
+				grade_level: grade_level
+			},
 			function(data, status) {
 				$('#tbody').html(data);
 				//alert(section);

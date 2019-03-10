@@ -29,11 +29,11 @@
                                 <div class="modal-body">
 								<form method="POST" action="server.php"></form>
 									<label class="col-sm-4" for="an_date">Announcement Category</label>
-									<select name="" id="category" class="form-control"> <!--SUBJECT TO CHANGE WAITING FOR KEITH AND JIMMY-->
+									<select name="recType" id="category" class="col-sm-8 form-control"> <!--SUBJECT TO CHANGE WAITING FOR KEITH AND JIMMY-->
 										<option value="" hidden>--Select--</option>
-										<option value="1">Type 1</option>
-										<option value="2">Type 2</option>
-										<option value="3">Type 3</option>
+										<option value="0">Students</option>
+										<option value="1">Faculty</option>
+										<option value="2">All</option>
 									</select>
 									<br>
                                     <label class="col-sm-4" for="an_date">Date</label>
@@ -42,9 +42,9 @@
 									<label class="col-sm-4" for="an_title">Title</label>
 									<input class="col-sm-8 form-control" type="text" id="an_title" placeholder="Title">
 									<br>
-									<label class="col-sm-4" for="an_author">Author</label>
-									<input class="col-sm-8 form-control" type="text" id="an_author" placeholder="Author"> <!--value="<!?php echo WHATEVER SESSION ?>"-->
-									<br>
+									<!--label class="col-sm-4" for="an_author">Author</label>
+									<input class="col-sm-8 form-control" type="text" id="an_author" placeholder="Author"> <value="<!?php echo WHATEVER SESSION ?>"-->
+									<br-->
 									<label class="col-sm-4" for="an_msg">Message</label>
 									<textarea class="col-sm-8 form-control" type="text area" id="an_msg" placeholder="Type message here"></textarea>
 								</div>
