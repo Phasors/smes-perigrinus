@@ -1,18 +1,29 @@
-<?php
+<!--THIS FILE IS FOR THE SERVER SIDE PROCESSING OF ANNOUNCEMENTS-->
 
-    $host= "localhost";
-    $dbname = "smes";
-    $uname = "root";
-    $pw = "";
-    
-    $db = new mysqli($host, $uname, $pw, $dbname);
+<?php
+include('db.php');
 
 if(isset($_GET['page'])){
     $page=$_GET['page'];
 
     if($page == "view"){
 
-        $result = $db->query("SELECT * FROM announcements");
+        //SUBJECT TO CHANGE. LIMIT THE ANNOUNCEMENTS THAT CAN BE VIEWED DEPENDING ON THE
+            //session keme and the category/recipient_category!!
+
+        $result = $db->query("SELECT A.announcement_id, A.title, A.content,
+                                        A.date_start, A.announcer, A.announcer_position,
+                                        A.ay_id, A.semester_id, A.recipient_category,
+                                        Y.ay_desc, Y.ay_status,
+                                        S.semester_name, S.status
+                                FROM announcements as A
+                                INNER JOIN academic_year as Y
+                                    ON A.ay_id = Y.ay_id
+                                INNER JOIN semesters as S
+                                    ON A.semester_id = S.semester_id
+                                WHERE A.recipient_category = 1 /*SUBJECT TO CHANGE DEPENDING ON SESSION*/
+                                AND Y.ay_status = 1
+                                AND S.status = 1");
         //$result = $stmt->execute();
         
         while($row = $result->fetch_assoc()) {
