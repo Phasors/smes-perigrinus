@@ -1,32 +1,81 @@
 <form>
+<?php
+include_once('../assets/php/db.php');
+$uid = $_SESSION['id'];
+
+$user = "SELECT * FROM stdnt_info WHERE person_id='$uid'";
+$quer = mysqli_query($db,$user);
+while($user=mysqli_fetch_array($quer)){
+	$program_id = $user['program_id'];
+	$stdnt_no =$user['stdnt_no'];
+	$yr_lvl =$user['year_level'];
+$program = "SELECT * FROM program WHERE program_id='$program_id'";
+$quers = mysqli_query($db,$program);
+while($prog=mysqli_fetch_array($quers)){
+	$col_id = $prog['college_id'];
+	$prog_name = $prog['program_name'];
+	
+	$college = "SELECT * FROM colleges WHERE college_id='$col_id'";
+$querss = mysqli_query($db,$college);
+while($coll=mysqli_fetch_array($querss)){
+	$college_name = $coll['college_name'];
+
+	
+
+?>
 	<div class="card">
 		<div class="card-body">
 			<h3>PERSONAL INFORMATION</h3>
 			<hr>
 			<div class="row">
 				<div class="col-sm-6">
+				<?php
+ $fls = "SELECT * FROM person WHERE person_id='$uid'";
+$querss = mysqli_query($db,$fls);
+while($us=mysqli_fetch_array($querss)){
+
+	$fname = $us['fname'];
+	$mname = $us['mname'];
+	$lname = $us['lname'];
+ 
+
+ ?>
 					<label>Name</label>
-					<input type="text" name="" class="form-control" disabled>
+					<input type="text" style="font-size: 15px" name="" value="<?php echo $fname."&nbsp;&nbsp; ".$mname."&nbsp;&nbsp; ".$lname;?>" class="form-control" disabled> <br>
+<?php 
+}
+?>
 				</div>
 				<div class="col-sm-6">
-					<label>Student</label>
-					<input type="text" name="" class="form-control" disabled>
+					<label>Student No.</label>
+					<input type="text" style="font-size: 15px" name="" value="<?php echo $stdnt_no;?>" class="form-control" disabled> <br>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-6">
+		
 					<label>Course</label>
-					<input type="text" name="" class="form-control" disabled>
+					<input type="text" style="font-size: 15px" name="" value="<?php echo $prog_name;?>" class="form-control" disabled> <br>
 				</div>
 				<div class="col-sm-3">
+				<?php
+ $ays= "SELECT * FROM academic_year ";
+$quersss = mysqli_query($db,$ays);
+while($us=mysqli_fetch_array($quersss)){
+
+	$ay = $us['ay_desc'];
+}?>
 					<label>Curriculum Year</label>
-					<input type="text" name="" class="form-control" disabled>
+					<input type="text" style="font-size: 15px" name="" value="<?php echo $ay;?>" class="form-control" disabled><br>
+<?php
+?>
 				</div>
 				<div class="col-sm-3">
 					<label>Year Level</label>
-					<input type="text" name="" class="form-control" disabled>
+					<input type="text" style="font-size: 15px" name="" value="<?php echo $yr_lvl;?>"class="form-control" disabled> <br>
 				</div>
 			</div>
+<?php }}} ?>
 			<hr>
 			<p>Reason for overloading beyond 6 units</p>
 			<div class="row">
@@ -140,6 +189,40 @@
 				</table>
 			</div>
 		</div>
+				<div class="row">
+				<div class="col-sm-12">
+					<br>
+					<input type="button" class="btn-info"  href="#" data-toggle="modal" data-target="#sssave" value="submit" style="float: right;">
+				</div></div>
 	</div>
-
 </form>
+
+<!--------------------
+		MODAL LOGIN 
+		--------------------->
+		<div class="modal fade" id="sssave">
+			<div class="modal-dialog modal-dialog-centered"">
+				<div class="modal-content">
+					<div class="modal-header">
+						<img src="img/logo-site.png" width="80px" height="80px" >
+						<h2 style="color: #007a81;margin-top: 15px;margin-left: 30px; font-size: 40px;">Perigrinus School</h2>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="row">
+								<div class="col-sm-12">
+									<label>Request has successfully been made.</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12">
+									<br>
+									<input type="button" name="" class="btn-info" value="save" style="float: right;">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
